@@ -1,0 +1,54 @@
+{
+  "real": {
+    "L": {
+      "DNp01_L": 48,
+      "DNp01_R": 1,
+      "all_DN_spikes_per_s": 1.4109589041095891
+    },
+    "R": {
+      "DNp01_L": 1,
+      "DNp01_R": 42,
+      "all_DN_spikes_per_s": 1.3021308980213089
+    },
+    "lateralization": 0.9565217391304348
+  },
+  "scrambled_0": {
+    "L": {
+      "DNp01_L": 0,
+      "DNp01_R": 2,
+      "all_DN_spikes_per_s": 1.1514459665144596
+    },
+    "R": {
+      "DNp01_L": 2,
+      "DNp01_R": 3,
+      "all_DN_spikes_per_s": 1.1331811263318112
+    },
+    "lateralization": -0.14285714285714285
+  },
+  "scrambled_1": {
+    "L": {
+      "DNp01_L": 4,
+      "DNp01_R": 2,
+      "all_DN_spikes_per_s": 1.2336377473363775
+    },
+    "R": {
+      "DNp01_L": 5,
+      "DNp01_R": 1,
+      "all_DN_spikes_per_s": 1.1308980213089803
+    },
+    "lateralization": -0.16666666666666666
+  },
+  "scrambled_2": {
+    "L": {
+      "DNp01_L": 2,
+      "DNp01_R": 2,
+      "all_DN_spikes_per_s": 1.2275494672754947
+    },
+    "R": {
+      "DNp01_L": 2,
+      "DNp01_R": 3,
+      "all_DN_spikes_per_s": 1.2199391171993912
+    },
+    "lateralization": 0.1111111111111111
+  }
+}

@@ -1,0 +1,1880 @@
+﻿python : ANTHROPIC_API_KEY is set and takes precedence over the SDK's profile / federation auto-discovery; unset 
+ANTHROPIC_API_KEY to use the auto-discovered credential.
+At line:1 char:320
++ ...  } catch {} } }; cd D:\anima-zero; python -m anima.agent 2>&1 | Tee-O ...
++                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ANTHROPIC_API_K...red credential.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+>> overview({})
+
+>> search_types({"query": "LPLC"})
+
+>> search_types({"query": "LC4"})
+
+>> search_types({"query": "DNp", "limit": 40})
+<< {
+ "neurons": 166700,
+ "connections": 25088107,
+ "cell_types": 11862,
+ "descending_neuron_types": 462,
+ "superclasses": {
+  "ol_intrinsic": 89403,
+  "cb_intrinsic": 32164,
+  "vnc_intrinsic": 13161,
+  "visual_projection": 9201,
+  "vnc_sensory": 6370,
+  "ol_sensory": 6098,
+  "cb_sensory": 4868,
+  "ascending_neuron": 1846,
+  "descending_neuron": 1314,
+  "vnc_motor": 708,
+  "visual_centrifugal": 563,
+  "sensory_ascending": 537,
+  "cb_motor": 107,
+  "vnc_efferent": 94,
+  "cb_endocrine": 72,
+  "ENS": 50,
+  "vnc_tbc": 38,
+  "vnc_sensory_tbc": 36,
+  "vnc_endocrine": 22,
+  "cb_sensory_tbc": 14,
+  "sensory_descending": 12,
+  "efferent_ascending": 8,
+  "cb_efferent": 4,
+  "efferent_descending": 4,
+  "descending_neuron_tbc": 2,
+  "sensory_ascending_tbc": 2,
+  "visual_projection_tbc": 2
+ },
+ "model": "leaky integrate-and-fire, 20 ms steps, weights = synapse count x transmitter sign, normalised per 
+postsynaptic neuron; tonic drive and noise hand-calibrated (flybrain 0.1.0)",
+ "dataset": "MaleCNS v1.0 (HHMI Janelia FlyEM, Google Research, Cambridge, MRC LMB; CC-BY)"
+}
+<< {
+ "query": "LPLC",
+ "matches": 4,
+ "types": [
+  {
+   "type": "LPLC2",
+   "neurons": 185,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LPLC1",
+   "neurons": 134,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LPLC4",
+   "neurons": 97,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LPLC_unclear",
+   "neurons": 1,
+   "superclass": [
+    "visual_projection"
+   ]
+  }
+ ],
+ "matching_superclasses": []
+}
+<< {
+ "query": "LC4",
+ "matches": 9,
+ "types": [
+  {
+   "type": "LC4",
+   "neurons": 126,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LC40",
+   "neurons": 34,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LC45",
+   "neurons": 23,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LC43",
+   "neurons": 14,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LC41",
+   "neurons": 13,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LC46",
+   "neurons": 12,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LC44",
+   "neurons": 5,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LPLC4",
+   "neurons": 97,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "mALC4",
+   "neurons": 2,
+   "superclass": [
+    "visual_centrifugal"
+   ]
+  }
+ ],
+ "matching_superclasses": []
+}
+<< {
+ "query": "DNp",
+ "matches": 123,
+ "types": [
+  {
+   "type": "DNpe008",
+   "neurons": 18,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNp17",
+   "neurons": 12,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNpe015",
+   "neurons": 11,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNpe009",
+   "neurons": 10,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNpe012",
+   "neurons": 8,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNpe054",
+   "neurons": 8,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNp16",
+   "neurons": 4,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNp41",
+   "neurons": 4,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNp51,DNpe019",
+   "neurons": 4,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNpe003",
+   "neurons": 4,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNpe004",
+   "neurons": 4,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNpe011",
+   "neurons": 4,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNpe014",
+   "neurons": 4,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNpe029",
+   "neurons": 4,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNpe031",
+   "neurons": 4,
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "...
+
+[thinking] I should cover the key visual neurons involved—LC4, LPLC2, and the descending neurons DNp01, DNp02, and 
+DNp11, including the giant fiber pathway.
+
+
+
+>> describe_type({"cell_type": "LC4"})
+
+>> describe_type({"cell_type": "LPLC2"})
+
+>> describe_type({"cell_type": "DNp01"})
+
+>> describe_type({"cell_type": "DNp02"})
+<< {
+ "type": "LC4",
+ "neurons": 126,
+ "sides": {
+  "L": 71,
+  "R": 55
+ },
+ "superclass": [
+  "visual_projection"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "PVLP024",
+   "neurons": 3,
+   "input_fraction": 0.6332,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "DNp04",
+   "neurons": 2,
+   "input_fraction": 0.5493,
+   "net_sign": "+",
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "CB3400",
+   "neurons": 2,
+   "input_fraction": 0.3004,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "CB2591,CB2917",
+   "neurons": 5,
+   "input_fraction": 0.2829,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "DNp02",
+   "neurons": 2,
+   "input_fraction": 0.2622,
+   "net_sign": "+",
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "PVLP021",
+   "neurons": 4,
+   "input_fraction": 0.2497,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "AMMC-A1",
+   "neurons": 6,
+   "input_fraction": 0.2349,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "PVLP022",
+   "neurons": 3,
+   "input_fraction": 0.2197,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "DNp01",
+   "neurons": 2,
+   "input_fraction": 0.1718,
+   "net_sign": "+",
+   "superclass": [
+ ...
+<< {
+ "type": "LPLC2",
+ "neurons": 185,
+ "sides": {
+  "L": 94,
+  "R": 91
+ },
+ "superclass": [
+  "visual_projection"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "PVLP069",
+   "neurons": 2,
+   "input_fraction": 0.7797,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "PVLP111",
+   "neurons": 9,
+   "input_fraction": 0.7264,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "PVLP112a",
+   "neurons": 2,
+   "input_fraction": 0.3532,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "AVLP531",
+   "neurons": 2,
+   "input_fraction": 0.2616,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "PVLP130",
+   "neurons": 2,
+   "input_fraction": 0.2176,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "CB0766",
+   "neurons": 4,
+   "input_fraction": 0.1876,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "PVLP151",
+   "neurons": 4,
+   "input_fraction": 0.1824,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "DNp04",
+   "neurons": 2,
+   "input_fraction": 0.1615,
+   "net_sign": "+",
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "DNg40",
+   "neurons": 2,
+   "input_fraction": 0.1569,
+   "net_sign": "+",
+   "superclass": [
+    "de...
+<< {
+ "type": "DNp01",
+ "neurons": 2,
+ "sides": {
+  "L": 1,
+  "R": 1
+ },
+ "superclass": [
+  "descending_neuron"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "GFC4",
+   "neurons": 8,
+   "input_fraction": 0.0522,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "CB3875",
+   "neurons": 1,
+   "input_fraction": 0.0277,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "IN11A044",
+   "neurons": 4,
+   "input_fraction": 0.0247,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "GFC3",
+   "neurons": 13,
+   "input_fraction": 0.0206,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "TTMn",
+   "neurons": 2,
+   "input_fraction": 0.0138,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_motor"
+   ]
+  },
+  {
+   "type": "IN18B034",
+   "neurons": 4,
+   "input_fraction": 0.0136,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "CB3878",
+   "neurons": 1,
+   "input_fraction": 0.0132,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "IN18B031",
+   "neurons": 2,
+   "input_fraction": 0.0126,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN00A039",
+   "neurons": 2,
+   "input_fraction": 0.0115,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrins...
+<< {
+ "type": "DNp02",
+ "neurons": 2,
+ "sides": {
+  "L": 1,
+  "R": 1
+ },
+ "superclass": [
+  "descending_neuron"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "IN06B065",
+   "neurons": 6,
+   "input_fraction": 0.0497,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN05B072_b",
+   "neurons": 2,
+   "input_fraction": 0.0475,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN11A009",
+   "neurons": 1,
+   "input_fraction": 0.0417,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN00A037",
+   "neurons": 1,
+   "input_fraction": 0.0387,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "CB3885",
+   "neurons": 1,
+   "input_fraction": 0.0368,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "IN00A030",
+   "neurons": 5,
+   "input_fraction": 0.0342,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN06B054",
+   "neurons": 2,
+   "input_fraction": 0.0296,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN05B061",
+   "neurons": 3,
+   "input_fraction": 0.0289,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "AN18B004",
+   "neurons": 2,
+   "input_fraction": 0.0286,
+   "net_sign": "+",
+   "superclass"...
+
+[thinking] The anatomy shows LC4 feeding strongly into DNp01, DNp02, DNp04, and DNp11, with DNp04 receiving over 
+half of GF input, while LPLC2 also connects to DNp01 and DNp04. I want to check DNa02's steering role for turning 
+away, plus DNp04, DNp11, and the backward-signaling MDN, and trace how LC4 connects to DNa02.
+
+Now I'm setting up a physiology simulation: stimulating LC4 and LPLC2 on the left side only, then watching how 
+DNp01, DNp02, DNp04, DNp11, DNa02, MDN, and DNg40 respond. I'll run the descriptions of DNp04, DNp11, DNa02 
+alongside the LC4→DNa02 path trace in parallel.
+
+
+
+>> describe_type({"cell_type": "DNp04"})
+
+>> describe_type({"cell_type": "DNp11"})
+
+>> describe_type({"cell_type": "DNa02", "top": 8})
+
+>> trace_paths({"source_type": "LC4", "target_type": "DNa02", "max_hops": 3})
+<< {
+ "type": "DNp04",
+ "neurons": 2,
+ "sides": {
+  "L": 1,
+  "R": 1
+ },
+ "superclass": [
+  "descending_neuron"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "IN00A010",
+   "neurons": 2,
+   "input_fraction": 0.0448,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "CB3914",
+   "neurons": 1,
+   "input_fraction": 0.0409,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "IN11A039",
+   "neurons": 2,
+   "input_fraction": 0.0321,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "CB3885",
+   "neurons": 1,
+   "input_fraction": 0.0299,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "AVLP429",
+   "neurons": 2,
+   "input_fraction": 0.029,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "AVLP430",
+   "neurons": 2,
+   "input_fraction": 0.0286,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "IN00A029",
+   "neurons": 4,
+   "input_fraction": 0.0224,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "AN_GNG_SAD_16",
+   "neurons": 2,
+   "input_fraction": 0.0221,
+   "net_sign": "+",
+   "superclass": [
+    "ascending_neuron"
+   ]
+  },
+  {
+   "type": "CB3925",
+   "neurons": 2,
+   "input_fraction": 0.0213,
+   "net_sign": "+",
+   "superclass": [
+...
+<< {
+ "type": "DNp11",
+ "neurons": 2,
+ "sides": {
+  "L": 1,
+  "R": 1
+ },
+ "superclass": [
+  "descending_neuron"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "IN18B044",
+   "neurons": 2,
+   "input_fraction": 0.1298,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN06B054",
+   "neurons": 2,
+   "input_fraction": 0.0782,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN21A073",
+   "neurons": 2,
+   "input_fraction": 0.0765,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN06B065",
+   "neurons": 6,
+   "input_fraction": 0.0562,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "AN05B049_c",
+   "neurons": 2,
+   "input_fraction": 0.0541,
+   "net_sign": "+",
+   "superclass": [
+    "ascending_neuron"
+   ]
+  },
+  {
+   "type": "IN21A084",
+   "neurons": 2,
+   "input_fraction": 0.0487,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN18B038",
+   "neurons": 10,
+   "input_fraction": 0.0443,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN05B090",
+   "neurons": 14,
+   "input_fraction": 0.038,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN06B035",
+   "neurons": 4,
+   "input_fraction": 0.038,
+   "net_sign": "+",
+   "super...
+<< {
+ "type": "DNa02",
+ "neurons": 2,
+ "sides": {
+  "L": 1,
+  "R": 1
+ },
+ "superclass": [
+  "descending_neuron"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "IN03A084",
+   "neurons": 6,
+   "input_fraction": 0.0513,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "LAL111,PS060",
+   "neurons": 4,
+   "input_fraction": 0.0385,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "AN_multi_48",
+   "neurons": 2,
+   "input_fraction": 0.034,
+   "net_sign": "+",
+   "superclass": [
+    "ascending_neuron"
+   ]
+  },
+  {
+   "type": "IN08A045",
+   "neurons": 6,
+   "input_fraction": 0.031,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN16B082",
+   "neurons": 6,
+   "input_fraction": 0.029,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN11A036",
+   "neurons": 4,
+   "input_fraction": 0.027,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN04B081",
+   "neurons": 16,
+   "input_fraction": 0.0259,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "PS137",
+   "neurons": 4,
+   "input_fraction": 0.0249,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  }
+ ],
+ "strongest_upstream": [
+  {
+   "type": "AN03A008",
+   "neurons": 2,
+   "input_fraction": 0.0303,
+   "...
+<< {
+ "from": "LC4",
+ "to": "DNa02",
+ "direct_input_fraction": 0.0,
+ "direct_sign": "+",
+ "paths": [],
+ "searched_hops": 3,
+ "note": "score = product of input fractions along the route; higher = stronger. Beam search, top 20 partners per 
+hop, so weak routes can be missed."
+}
+
+[thinking] No direct LC4 to DNa02 route in the top beam, so I'll move on to testing physiology by stimulating LC4 
+and LPLC2 on the left side only, then observing which escape DNs respond as a baseline experiment.
+
+
+
+>> stimulate({"types": ["LC4", "LPLC2"], "side": "L", "watch": ["DNp01", "DNp02", "DNp04", "DNp11", "DNp03", 
+"DNa02", "MDN", "DNg40"], "steps": 50})
+<< {
+ "stimulated": {
+  "types": [
+   "LC4",
+   "LPLC2"
+  ],
+  "side": "L",
+  "neurons": 165,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "real connectome",
+ "watched": {
+  "DNp01": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 48.0,
+    "delta_hz": 47.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 1.0
+   }
+  },
+  "DNp02": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 47.0,
+    "delta_hz": 46.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 1.0
+   }
+  },
+  "DNp04": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 49.0,
+    "delta_hz": 48.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": -1.0
+   }
+  },
+  "DNp11": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 25.0,
+    "delta_hz": 25.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNp03": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 25.0,
+    "delta_hz": 23.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNa02": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 1.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   }
+  },
+  "MDN": {
+   "L": {
+    "n": 2,
+  ...
+
+[thinking] The lateralization is striking: left DNs fire around 48 Hz while right DNs stay near 0-2 Hz. I want to 
+add controls with scrambled wiring under the same stimulation, and also test LC4 alone versus LPLC2 alone, plus 
+check the right side for mirror symmetry. I'll run the real-connectome right-side mirror check alongside the 
+LC4-only and LPLC2-only tests as independent runs in the same block, then move to the scrambled-wiring control.
+
+
+
+>> stimulate({"types": ["LC4", "LPLC2"], "side": "R", "watch": ["DNp01", "DNp02", "DNp04", "DNp11", "DNp03"]})
+
+>> stimulate({"types": ["LC4"], "side": "L", "watch": ["DNp01", "DNp02", "DNp04", "DNp11", "DNp03"]})
+
+>> stimulate({"types": ["LPLC2"], "side": "L", "watch": ["DNp01", "DNp02", "DNp04", "DNp11", "DNp03"]})
+<< {
+ "stimulated": {
+  "types": [
+   "LC4",
+   "LPLC2"
+  ],
+  "side": "R",
+  "neurons": 146,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "real connectome",
+ "watched": {
+  "DNp01": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 2.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 45.0,
+    "delta_hz": 44.0
+   }
+  },
+  "DNp02": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": -1.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 30.0,
+    "delta_hz": 30.0
+   }
+  },
+  "DNp04": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": -1.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 49.0,
+    "delta_hz": 48.0
+   }
+  },
+  "DNp11": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 25.0,
+    "delta_hz": 25.0
+   }
+  },
+  "DNp03": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": -2.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 15.0,
+    "delta_hz": 15.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "DNp04",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 49.0,
+   "delta_hz": 48.0
+  },
+  {
+   "type": "DNp01",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "st...
+<< {
+ "stimulated": {
+  "types": [
+   "LC4"
+  ],
+  "side": "L",
+  "neurons": 71,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "real connectome",
+ "watched": {
+  "DNp01": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 25.0,
+    "delta_hz": 24.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNp02": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 48.0,
+    "delta_hz": 47.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNp04": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 49.0,
+    "delta_hz": 48.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": -1.0
+   }
+  },
+  "DNp11": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 25.0,
+    "delta_hz": 25.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNp03": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 25.0,
+    "delta_hz": 23.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "DNp04",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 49.0,
+   "delta_hz": 48.0
+  },
+  {
+   "type": "DNp02",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 4...
+<< {
+ "stimulated": {
+  "types": [
+   "LPLC2"
+  ],
+  "side": "L",
+  "neurons": 94,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "real connectome",
+ "watched": {
+  "DNp01": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 21.0,
+    "delta_hz": 20.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 1.0
+   }
+  },
+  "DNp02": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 2.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNp04": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 25.0,
+    "delta_hz": 24.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNp11": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 1.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNp03": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "DNp04",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 25.0,
+   "delta_hz": 24.0
+  },
+  {
+   "type": "DNg40",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 0.0,
+   "stimulated_hz": 20.0,
+...
+
+[thinking] LC4 and LPLC2 individually drive about half of GF's response, but together they produce a supralinear 
+jump to 48 Hz — clear evidence of summation. The downstream DNs split cleanly: DNp02/DNp03/DNp11 depend on LC4, 
+while DNg40/DNp71/DNpe056 depend on LPLC2. Now I'm moving on to check the scrambled control condition.
+
+
+
+>> set_scrambled({"enabled": true})
+<< {
+ "wiring": "scrambled (control)",
+ "note": "trace_paths/describe_type still report the REAL connectome; only stimulate() uses the control wiring."
+}
+
+>> stimulate({"types": ["LC4", "LPLC2"], "side": "L", "watch": ["DNp01", "DNp02", "DNp04", "DNp11", "DNp03", 
+"DNg40"]})
+
+>> stimulate({"types": ["LC4"], "side": "L", "watch": ["DNp01", "DNp02", "DNp04", "DNp11", "DNp03"]})
+<< {
+ "stimulated": {
+  "types": [
+   "LC4",
+   "LPLC2"
+  ],
+  "side": "L",
+  "neurons": 165,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "scrambled (control)",
+ "watched": {
+  "DNp01": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNp02": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 1.0
+   }
+  },
+  "DNp04": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNp11": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 4.0,
+    "stimulated_hz": 4.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 5.0,
+    "delta_hz": 3.0
+   }
+  },
+  "DNp03": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 1.0
+   }
+  },
+  "DNg40": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": -3.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": -1.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [...
+<< {
+ "stimulated": {
+  "types": [
+   "LC4"
+  ],
+  "side": "L",
+  "neurons": 71,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "scrambled (control)",
+ "watched": {
+  "DNp01": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": -1.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 1.0
+   }
+  },
+  "DNp02": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 1.0
+   }
+  },
+  "DNp04": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNp11": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 4.0,
+    "stimulated_hz": 5.0,
+    "delta_hz": 1.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 1.0
+   }
+  },
+  "DNp03": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "DNa02",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 5.0,
+   "stimulated_hz": 2.0,
+   "delta_hz": -3.0
+  },
+  {
+   "type": "DNg111",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 3.0,
+   "stimulated_hz": 6.0,
+  ...
+
+[thinking] The control condition completely abolishes the effect—max DN delta drops to 3 Hz with no 
+lateralization, DNp01 shows zero delta. I should restore the real wiring now, and maybe consider one more 
+experiment testing whether the intermediate hub PVLP024/PVLP071 or the direct LC4→DNp01 link is necessary, though 
+that's optional at this point.
+
+Actually, the more useful next step is to trace the output side: with real wiring restored, stimulate DNp01 L and 
+watch the downstream motor neuron TTMn to confirm the full arc reaches the effector, alongside GFC4/GFC3 to 
+compare pathways. I'm not sure watch 
+
+>> set_scrambled({"enabled": false})
+<< {
+ "wiring": "real connectome",
+ "note": "trace_paths/describe_type still report the REAL connectome; only stimulate() uses the control wiring."
+}
+
+>> stimulate({"types": ["DNp01"], "side": "L", "watch": ["TTMn", "GFC4", "GFC3", "DLMn", "MN1"], "steps": 25})
+
+>> trace_paths({"source_type": "LC4", "target_type": "TTMn", "max_hops": 3})
+<< {
+ "stimulated": {
+  "types": [
+   "DNp01"
+  ],
+  "side": "L",
+  "neurons": 1,
+  "amount": 0.8,
+  "duration_s": 0.5
+ },
+ "wiring": "real connectome",
+ "watched": {
+  "TTMn": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 0.0
+   }
+  },
+  "GFC4": {
+   "L": {
+    "n": 4,
+    "baseline_hz": 1.5,
+    "stimulated_hz": 5.5,
+    "delta_hz": 4.0
+   },
+   "R": {
+    "n": 4,
+    "baseline_hz": 0.5,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.5
+   }
+  },
+  "GFC3": {
+   "L": {
+    "n": 6,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.67,
+    "delta_hz": 0.67
+   },
+   "R": {
+    "n": 7,
+    "baseline_hz": 0.29,
+    "stimulated_hz": 1.43,
+    "delta_hz": 1.14
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "DNp01",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 2.0,
+   "stimulated_hz": 26.0,
+   "delta_hz": 24.0
+  },
+  {
+   "type": "DNge019",
+   "side": "L",
+   "n": 7,
+   "baseline_hz": 2.29,
+   "stimulated_hz": 0.29,
+   "delta_hz": -2.0
+  },
+  {
+   "type": "DNae001",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 0.0,
+   "stimulated_hz": 2.0,
+   "delta_hz": 2.0
+  },
+  {
+   "type": "DNae002",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 0.0,
+   "stimulated_hz": 2.0,
+   "delta_hz": 2.0
+  },
+  {
+   "type": "DNae003",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 0.0,
+   "stimulated_hz": 2.0,
+   "delta_hz": 2.0
+  },
+  {
+   "type": "DNb01",
+  ...
+<< {
+ "from": "LC4",
+ "to": "TTMn",
+ "direct_input_fraction": 0.0,
+ "direct_sign": "+",
+ "paths": [
+  {
+   "hops": 2,
+   "score": 0.002375,
+   "route": "LC4 -> DNp01 -> TTMn",
+   "steps": [
+    {
+     "from": "LC4",
+     "to": "DNp01",
+     "input_fraction": 0.1718,
+     "sign": "+"
+    },
+    {
+     "from": "DNp01",
+     "to": "TTMn",
+     "input_fraction": 0.0138,
+     "sign": "+"
+    }
+   ]
+  },
+  {
+   "hops": 3,
+   "score": 0.000397,
+   "route": "LC4 -> DNp11 -> IN21A026 -> TTMn",
+   "steps": [
+    {
+     "from": "LC4",
+     "to": "DNp11",
+     "input_fraction": 0.1713,
+     "sign": "+"
+    },
+    {
+     "from": "DNp11",
+     "to": "IN21A026",
+     "input_fraction": 0.0259,
+     "sign": "+"
+    },
+    {
+     "from": "IN21A026",
+     "to": "TTMn",
+     "input_fraction": 0.0895,
+     "sign": "-"
+    }
+   ]
+  },
+  {
+   "hops": 3,
+   "score": 7.9e-05,
+   "route": "LC4 -> DNp04 -> IN00A029 -> TTMn",
+   "steps": [
+    {
+     "from": "LC4",
+     "to": "DNp04",
+     "input_fraction": 0.5493,
+     "sign": "+"
+    },
+    {
+     "from": "DNp04",
+     "to": "IN00A029",
+     "input_fraction": 0.0224,
+     "sign": "+"
+    },
+    {
+     "from": "IN00A029",
+     "to": "TTMn",
+     "input_fraction": 0.0064,
+     "sign": "-"
+    }
+   ]
+  },
+  {
+   "hops": 3,
+   "score": 7.2e-05,
+   "route": "LC4 -> SAD064 -> DNp01 -> TTMn",
+   "steps": [
+    {
+     "from": "LC4",
+     "to": "SAD064",
+     "input_fraction": 0.1571,
+     "sign": "+"
+    },
+    {
+     "from": "SAD064",
+     "to": "DNp01",
+     "...
+
+[thinking] Stimulating DNp01 alone at 26 Hz didn't drive TTMn since its input fraction was only 1.4%, likely 
+because the real GF pathway is electrical/mixed and the model lacks gap junctions — worth flagging as a 
+limitation. GFC4 L at +4 Hz did produce a response at 5.2% input, so I have enough to write up the report now.
+
+
+
+I'll start with the anatomy: what looming-detector and escape populations exist in this connectome.
+
+The canonical looming pathway is LC4/LPLC2 → giant fiber (DNp01) and DNp02/DNp11. Let me check who actually drives those here.
+
+LC4/LPLC2 converge on DNp01/02/04/11 with large input fractions. Let me check the downstream escape DNs and the steering route.
+
+Anatomy gives a clean, convergent escape hub. Now physiology — left-sided looming drive:
+
+Strongly lateralized: left escape DNs at ~48 Hz, right side ~1 Hz. Let me test the mirror, and dissect LC4 vs LPLC2 contributions.
+
+Now the critical control — degree-preserving scrambled wiring, identical drive:
+
+Control is flat. Restoring real wiring and checking the motor output end of the arc:
+
+## The circuit
+
+**Anatomy (real connectome, input fractions on the postsynaptic cell):**
+
+A left-field looming stimulus is detected by the left optic lobe's two loom-tuned visual projection populations — **LC4** (126 neurons; 71 L / 55 R) and **LPLC2** (185; 94 L / 91 R), both excitatory, both fed by exactly the columnar units you'd expect (LC4 ← T2 0.15, TmY3 0.13, Tm4 0.10; LPLC2 ← T4/T5 a–d, 0.03–0.05 each, i.e. motion-energy input).
+
+They converge, ipsilaterally, onto a small bank of escape descending neurons in the PVLP/GNG:
+
+| Target DN | from LC4 | from LPLC2 | role |
+|---|---|---|---|
+| **DNp04** | **0.549** | 0.162 | largest single convergence in the set |
+| **DNp02** | 0.262 | – | escape/takeoff |
+| **DNp01** (giant fiber) | 0.172 | 0.133 | short-latency escape |
+| **DNp11** | 0.171 | – (LPLC1 0.049) | |
+| DNg40 | – | 0.157 | LPLC2-specific |
+
+So LC4 supplies >half of DNp04's *entire* synaptic input and ~17% of the giant fiber's. There's also a parallel indirect layer (PVLP024 gets 0.63 of its input from LC4; PVLP111 0.73 from LPLC2; SAD064 and PVLP122b then feed back onto DNp01 at 0.033/0.029). Notably, **no route from LC4 to the steering DN DNa02** survived a 3-hop beam search — this is an escape pathway, not a steering one.
+
+## Stimulation (0.8/step, 1 s, real wiring)
+
+**Left LC4+LPLC2 (165 neurons):**
+
+| DN | L baseline → stim | R baseline → stim |
+|---|---|---|
+| DNp04 | 1 → **49 Hz** (+48) | 1 → 0 |
+| DNp01 | 1 → **48 Hz** (+47) | 1 → 2 |
+| DNp02 | 1 → **47 Hz** (+46) | 0 → 1 |
+| DNp11 | 0 → **25 Hz** | 0 → 0 |
+| DNp03 | 2 → **25 Hz** | 0 → 0 |
+| DNg40 | 0 → 25 Hz | 1 → 4 |
+| DNa02 (steering) | 1 → 2 | 0 → 0 |
+| MDN (backward) | 0 → 1 | 0 → 0 |
+
+The command is **strictly lateralized to the stimulated side** (~48 Hz vs ~1 Hz), and it is specifically the escape bank: steering and backward-walking DNs are untouched. Whole-brain mean rose only 1.91 → 2.09 Hz, so this is not generalized excitation.
+
+**Mirror control:** right LC4+LPLC2 gives right DNp04 +48, DNp01 +44, DNp02 +30, DNp11 +25, with left DNs at 0 to −2 Hz. The circuit is symmetric and side-specific.
+
+**Channel dissection (left side):** LC4 alone → DNp02 +47, DNp04 +48, DNp03 +23, DNp11 +25, but DNp01 only +24. LPLC2 alone → DNp04 +24, DNp01 +20, DNg40 +20, but DNp02 +2, DNp11 +1. So **the giant fiber is the only target that requires both streams to reach saturation** (24 + 20 → 47 combined): DNp01 is the coincidence detector, DNp02/03/11 are LC4-private, DNg40/DNp71/DNpe056 are LPLC2-private.
+
+## Scrambled control
+
+Degree-preserving scramble, identical drive:
+
+| DN | real Δ | scrambled Δ |
+|---|---|---|
+| DNp01 L | +47 | **0.0** |
+| DNp02 L | +46 | **0.0** |
+| DNp04 L | +48 | **0.0** |
+| DNp11 L | +25 | **0.0** |
+| DNp03 L | +23 | **0.0** |
+
+Largest change across *all* 462 DN types under scrambling was +3 Hz (DNc01, and DNp11 on the *wrong* side), with no lateralization and neurons-over-5-Hz falling 674 → 166. The effect is carried by specific identified synapses, not by degree, drive magnitude, or population size.
+
+## What this model cannot tell you
+
+- **The arc stops at the DN.** Driving DNp01 alone (26 Hz) moved GFC4 (+4 Hz L, its input fraction 0.052) but *not* TTMn, the tergotrochanteral "jump" motor neuron — DNp01→TTMn is only 0.014 of TTMn's input here, and the real giant-fiber→TTMn/PSI junction is electrical. **This simulation has no gap junctions**, so the fastest, most famous link in the escape reflex is exactly the one it under-reports.
+- No photoreceptors were used: I injected current into LC4/LPLC2 directly, so this tests the *central* circuit, not loom computation. Real LC4 and LPLC2 differ in time course (LPLC2 angular-size, LC4 angular-velocity) — that timing difference, which decides jump-vs-takeoff mode in flies, is invisible to a step-current drive.
+- Drive amplitude and tonic background are hand-calibrated; absolute Hz are not physiological. There is no plasticity, no neuromodulation, and no behavioural state, so I cannot tell you whether a walking fly would gate this differently.

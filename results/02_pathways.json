@@ -1,0 +1,944 @@
+{
+  "overview": {
+    "neurons": 166700,
+    "connections": 25088107,
+    "cell_types": 11862,
+    "descending_neuron_types": 462,
+    "superclasses": {
+      "ol_intrinsic": 89403,
+      "cb_intrinsic": 32164,
+      "vnc_intrinsic": 13161,
+      "visual_projection": 9201,
+      "vnc_sensory": 6370,
+      "ol_sensory": 6098,
+      "cb_sensory": 4868,
+      "ascending_neuron": 1846,
+      "descending_neuron": 1314,
+      "vnc_motor": 708,
+      "visual_centrifugal": 563,
+      "sensory_ascending": 537,
+      "cb_motor": 107,
+      "vnc_efferent": 94,
+      "cb_endocrine": 72,
+      "ENS": 50,
+      "vnc_tbc": 38,
+      "vnc_sensory_tbc": 36,
+      "vnc_endocrine": 22,
+      "cb_sensory_tbc": 14,
+      "sensory_descending": 12,
+      "efferent_ascending": 8,
+      "cb_efferent": 4,
+      "efferent_descending": 4,
+      "descending_neuron_tbc": 2,
+      "sensory_ascending_tbc": 2,
+      "visual_projection_tbc": 2
+    },
+    "model": "leaky integrate-and-fire, 20 ms steps, weights = synapse count x transmitter sign, normalised per postsynaptic neuron; tonic drive and noise hand-calibrated (flybrain 0.1.0)",
+    "dataset": "MaleCNS v1.0 (HHMI Janelia FlyEM, Google Research, Cambridge, MRC LMB; CC-BY)"
+  },
+  "search_DNp": {
+    "query": "DNp",
+    "matches": 123,
+    "types": [
+      {
+        "type": "DNpe008",
+        "neurons": 18,
+        "superclass": [
+          "descending_neuron"
+        ]
+      },
+      {
+        "type": "DNp17",
+        "neurons": 12,
+        "superclass": [
+          "descending_neuron"
+        ]
+      },
+      {
+        "type": "DNpe015",
+        "neurons": 11,
+        "superclass": [
+          "descending_neuron"
+        ]
+      },
+      {
+        "type": "DNpe009",
+        "neurons": 10,
+        "superclass": [
+          "descending_neuron"
+        ]
+      },
+      {
+        "type": "DNpe012",
+        "neurons": 8,
+        "superclass": [
+          "descending_neuron"
+        ]
+      },
+      {
+        "type": "DNpe054",
+        "neurons": 8,
+        "superclass": [
+          "descending_neuron"
+        ]
+      },
+      {
+        "type": "DNp16",
+        "neurons": 4,
+        "superclass": [
+          "descending_neuron"
+        ]
+      },
+      {
+        "type": "DNp41",
+        "neurons": 4,
+        "superclass": [
+          "descending_neuron"
+        ]
+      }
+    ],
+    "matching_superclasses": []
+  },
+  "describe_LC4": {
+    "type": "LC4",
+    "neurons": 126,
+    "sides": {
+      "L": 71,
+      "R": 55
+    },
+    "superclass": [
+      "visual_projection"
+    ],
+    "sign": "excitatory",
+    "inhibitory_fraction_of_output": 0.0,
+    "total_input_fraction_accounted_by_named_types": 1.0,
+    "strongest_downstream": [
+      {
+        "type": "PVLP024",
+        "neurons": 3,
+        "input_fraction": 0.6332,
+        "net_sign": "+",
+        "superclass": [
+          "cb_intrinsic"
+        ]
+      },
+      {
+        "type": "DNp04",
+        "neurons": 2,
+        "input_fraction": 0.5493,
+        "net_sign": "+",
+        "superclass": [
+          "descending_neuron"
+        ]
+      },
+      {
+        "type": "CB3400",
+        "neurons": 2,
+        "input_fraction": 0.3004,
+        "net_sign": "+",
+        "superclass": [
+          "cb_intrinsic"
+        ]
+      },
+      {
+        "type": "CB2591,CB2917",
+        "neurons": 5,
+        "input_fraction": 0.2829,
+        "net_sign": "+",
+        "superclass": [
+          "cb_intrinsic"
+        ]
+      },
+      {
+        "type": "DNp02",
+        "neurons": 2,
+        "input_fraction": 0.2622,
+        "net_sign": "+",
+        "superclass": [
+          "descending_neuron"
+        ]
+      },
+      {
+        "type": "PVLP021",
+        "neurons": 4,
+        "input_fraction": 0.2497,
+        "net_sign": "+",
+        "superclass": [
+          "cb_intrinsic"
+        ]
+      },
+      {
+        "type": "AMMC-A1",
+        "neurons": 6,
+        "input_fraction": 0.2349,
+        "net_sign": "+",
+        "superclass": [
+          "cb_intrinsic"
+        ]
+      },
+      {
+        "type": "PVLP022",
+        "neurons": 3,
+        "input_fraction": 0.2197,
+        "net_sign": "+",
+        "superclass": [
+          "cb_intrinsic"
+        ]
+      },
+      {
+        "type": "DNp01",
+        "neurons": 2,
+        "input_fraction": 0.1718,
+        "net_sign": "+",
+        "superclass": [
+          "descending_neuron"
+        ]
+      },
+      {
+        "type": "DNp11",
+        "neurons": 2,
+        "input_fraction": 0.1713,
+        "net_sign": "+",
+        "superclass": [
+          "descending_neuron"
+        ]
+      }
+    ],
+    "strongest_upstream": [
+      {
+        "type": "T2",
+        "neurons": 1630,
+        "input_fraction": 0.1505,
+        "net_sign": "+",
+        "superclass": [
+          "ol_intrinsic"
+        ]
+      },
+      {
+        "type": "TmY3",
+        "neurons": 824,
+        "input_fraction": 0.1339,
+        "net_sign": "+",
+        "superclass": [
+          "ol_intrinsic"
+        ]
+      },
+      {
+        "type": "Tm4",
+        "neurons": 1670,
+        "input_fraction": 0.1005,
+        "net_sign": "+",
+        "superclass": [
+          "ol_intrinsic"
+        ]
+      },
+      {
+        "type": "Tm2",
+        "neurons": 1766,
+        "input_fraction": 0.0669,
+        "net_sign": "+",
+        "superclass": [
+          "ol_intrinsic"
+        ]
+      },
+      {
+        "type": "LC4",
+        "neurons": 126,
+        "input_fraction": 0.0621,
+        "net_sign": "+",
+        "superclass": [
+          "visual_projection"
+        ]
+      },
+      {
+        "type": "Tm3",
+        "neurons": 2054,
+        "input_fraction": 0.0558,
+        "net_sign": "+",
+        "superclass": [
+          "ol_intrinsic"
+        ]
+      },
+      {
+        "type": "Li22",
+        "neurons": 13,
+        "input_fraction": 0.0244,
+        "net_sign": "-",
+        "superclass": [
+          "ol_intrinsic"
+        ]
+      },
+      {
+        "type": "LMa2",
+        "neurons": 47,
+        "input_fraction": 0.0205,
+        "net_sign": "-",
+        "superclass": [
+          "ol_intrinsic"
+        ]
+      },
+      {
+        "type": "LC9",
+        "neurons": 219,
+        "input_fraction": 0.0198,
+        "net_sign": "+",
+        "superclass": [
+          "visual_projection"
+        ]
+      },
+      {
+        "type": "cL08",
+        "neurons": 2,
+        "input_fraction": 0.0146,
+        "net_sign": "-",
+        "superclass": [
+          "visual_centrifugal"
+        ]
+      }
+    ],
+    "note": "input_fraction = mean share of a postsynaptic neuron's total synaptic input that comes from the named type (0..1). Downstream entries are how much of *their* input comes from this type."
+  },
+  "path_LC4_DNp01": {
+    "from": "LC4",
+    "to": "DNp01",
+    "direct_input_fraction": 0.1718,
+    "direct_sign": "+",
+    "paths": [
+      {
+        "hops": 1,
+        "score": 0.171801,
+        "route": "LC4 -> DNp01",
+        "steps": [
+          {
+            "from": "LC4",
+            "to": "DNp01",
+            "input_fraction": 0.1718,
+            "sign": "+"
+          }
+        ]
+      },
+      {
+        "hops": 2,
+        "score": 0.005215,
+        "route": "LC4 -> SAD064 -> DNp01",
+        "steps": [
+          {
+            "from": "LC4",
+            "to": "SAD064",
+            "input_fraction": 0.1571,
+            "sign": "+"
+          },
+          {
+            "from": "SAD064",
+            "to": "DNp01",
+            "input_fraction": 0.0332,
+            "sign": "+"
+          }
+        ]
+      },
+      {
+        "hops": 2,
+        "score": 0.003795,
+        "route": "LC4 -> PVLP122b -> DNp01",
+        "steps": [
+          {
+            "from": "LC4",
+            "to": "PVLP122b",
+            "input_fraction": 0.1302,
+            "sign": "+"
+          },
+          {
+            "from": "PVLP122b",
+            "to": "DNp01",
+            "input_fraction": 0.0291,
+            "sign": "+"
+          }
+        ]
+      },
+      {
+        "hops": 3,
+        "score": 0.000753,
+        "route": "LC4 -> PVLP022 -> SAD064 -> DNp01",
+        "steps": [
+          {
+            "from": "LC4",
+            "to": "PVLP022",
+            "input_fraction": 0.2197,
+            "sign": "+"
+          },
+          {
+            "from": "PVLP022",
+            "to": "SAD064",
+            "input_fraction": 0.1032,
+            "sign": "-"
+          },
+          {
+            "from": "SAD064",
+            "to": "DNp01",
+            "input_fraction": 0.0332,
+            "sign": "+"
+          }
+        ]
+      },
+      {
+        "hops": 3,
+        "score": 0.000158,
+        "route": "LC4 -> PVLP022 -> CB3877 -> DNp01",
+        "steps": [
+          {
+            "from": "LC4",
+            "to": "PVLP022",
+            "input_fraction": 0.2197,
+            "sign": "+"
+          },
+          {
+            "from": "PVLP022",
+            "to": "CB3877",
+            "input_fraction": 0.0499,
+            "sign": "-"
+          },
+          {
+            "from": "CB3877",
+            "to": "DNp01",
+            "input_fraction": 0.0144,
+            "sign": "-"
+          }
+        ]
+      }
+    ],
+    "searched_hops": 3,
+    "note": "score = product of input fractions along the route; higher = stronger. Beam search, top 20 partners per hop, so weak routes can be missed."
+  },
+  "path_LPLC2_DNp01": {
+    "from": "LPLC2",
+    "to": "DNp01",
+    "direct_input_fraction": 0.133,
+    "direct_sign": "+",
+    "paths": [
+      {
+        "hops": 1,
+        "score": 0.133027,
+        "route": "LPLC2 -> DNp01",
+        "steps": [
+          {
+            "from": "LPLC2",
+            "to": "DNp01",
+            "input_fraction": 0.133,
+            "sign": "+"
+          }
+        ]
+      },
+      {
+        "hops": 2,
+        "score": 0.003001,
+        "route": "LPLC2 -> PVLP151 -> DNp01",
+        "steps": [
+          {
+            "from": "LPLC2",
+            "to": "PVLP151",
+            "input_fraction": 0.1824,
+            "sign": "+"
+          },
+          {
+            "from": "PVLP151",
+            "to": "DNp01",
+            "input_fraction": 0.0165,
+            "sign": "+"
+          }
+        ]
+      },
+      {
+        "hops": 3,
+        "score": 0.000294,
+        "route": "LPLC2 -> DNg40 -> CB3877 -> DNp01",
+        "steps": [
+          {
+            "from": "LPLC2",
+            "to": "DNg40",
+            "input_fraction": 0.1569,
+            "sign": "+"
+          },
+          {
+            "from": "DNg40",
+            "to": "CB3877",
+            "input_fraction": 0.1301,
+            "sign": "-"
+          },
+          {
+            "from": "CB3877",
+            "to": "DNp01",
+            "input_fraction": 0.0144,
+            "sign": "-"
+          }
+        ]
+      },
+      {
+        "hops": 3,
+        "score": 9.1e-05,
+        "route": "LPLC2 -> DNg40 -> CB3707 -> DNp01",
+        "steps": [
+          {
+            "from": "LPLC2",
+            "to": "DNg40",
+            "input_fraction": 0.1569,
+            "sign": "+"
+          },
+          {
+            "from": "DNg40",
+            "to": "CB3707",
+            "input_fraction": 0.0183,
+            "sign": "-"
+          },
+          {
+            "from": "CB3707",
+            "to": "DNp01",
+            "input_fraction": 0.0317,
+            "sign": "-"
+          }
+        ]
+      },
+      {
+        "hops": 3,
+        "score": 6.9e-05,
+        "route": "LPLC2 -> PVLP130 -> PVLP151 -> DNp01",
+        "steps": [
+          {
+            "from": "LPLC2",
+            "to": "PVLP130",
+            "input_fraction": 0.2176,
+            "sign": "+"
+          },
+          {
+            "from": "PVLP130",
+            "to": "PVLP151",
+            "input_fraction": 0.0194,
+            "sign": "-"
+          },
+          {
+            "from": "PVLP151",
+            "to": "DNp01",
+            "input_fraction": 0.0165,
+            "sign": "+"
+          }
+        ]
+      }
+    ],
+    "searched_hops": 3,
+    "note": "score = product of input fractions along the route; higher = stronger. Beam search, top 20 partners per hop, so weak routes can be missed."
+  },
+  "path_LC10a_DNa02": {
+    "from": "LC10a",
+    "to": "DNa02",
+    "direct_input_fraction": 0.0,
+    "direct_sign": "+",
+    "paths": [
+      {
+        "hops": 2,
+        "score": 0.003124,
+        "route": "LC10a -> CB3127 -> DNa02",
+        "steps": [
+          {
+            "from": "LC10a",
+            "to": "CB3127",
+            "input_fraction": 0.3465,
+            "sign": "+"
+          },
+          {
+            "from": "CB3127",
+            "to": "DNa02",
+            "input_fraction": 0.009,
+            "sign": "+"
+          }
+        ]
+      },
+      {
+        "hops": 2,
+        "score": 0.002628,
+        "route": "LC10a -> AOTU025 -> DNa02",
+        "steps": [
+          {
+            "from": "LC10a",
+            "to": "AOTU025",
+            "input_fraction": 0.3154,
+            "sign": "+"
+          },
+          {
+            "from": "AOTU025",
+            "to": "DNa02",
+            "input_fraction": 0.0083,
+            "sign": "+"
+          }
+        ]
+      },
+      {
+        "hops": 3,
+        "score": 0.0006,
+        "route": "LC10a -> CB0007,CB0739 -> PS049 -> DNa02",
+        "steps": [
+          {
+            "from": "LC10a",
+            "to": "CB0007,CB0739",
+            "input_fraction": 0.3749,
+            "sign": "+"
+          },
+          {
+            "from": "CB0007,CB0739",
+            "to": "PS049",
+            "input_fraction": 0.0756,
+            "sign": "+"
+          },
+          {
+            "from": "PS049",
+            "to": "DNa02",
+            "input_fraction": 0.0212,
+            "sign": "-"
+          }
+        ]
+      },
+      {
+        "hops": 3,
+        "score": 0.000263,
+        "route": "LC10a -> CB0007,CB0739 -> PS059 -> DNa02",
+        "steps": [
+          {
+            "from": "LC10a",
+            "to": "CB0007,CB0739",
+            "input_fraction": 0.3749,
+            "sign": "+"
+          },
+          {
+            "from": "CB0007,CB0739",
+            "to": "PS059",
+            "input_fraction": 0.0338,
+            "sign": "+"
+          },
+          {
+            "from": "PS059",
+            "to": "DNa02",
+            "input_fraction": 0.0207,
+            "sign": "-"
+          }
+        ]
+      },
+      {
+        "hops": 3,
+        "score": 0.000174,
+        "route": "LC10a -> CB0007,CB0739 -> PS013 -> DNa02",
+        "steps": [
+          {
+            "from": "LC10a",
+            "to": "CB0007,CB0739",
+            "input_fraction": 0.3749,
+            "sign": "+"
+          },
+          {
+            "from": "CB0007,CB0739",
+            "to": "PS013",
+            "input_fraction": 0.0411,
+            "sign": "+"
+          },
+          {
+            "from": "PS013",
+            "to": "DNa02",
+            "input_fraction": 0.0113,
+            "sign": "+"
+          }
+        ]
+      }
+    ],
+    "searched_hops": 3,
+    "note": "score = product of input fractions along the route; higher = stronger. Beam search, top 20 partners per hop, so weak routes can be missed."
+  },
+  "stim_LC4_L": {
+    "stimulated": {
+      "types": [
+        "LC4"
+      ],
+      "side": "L",
+      "neurons": 71,
+      "amount": 0.8,
+      "duration_s": 1.0
+    },
+    "wiring": "real connectome",
+    "watched": {
+      "DNp01": {
+        "L": {
+          "n": 1,
+          "baseline_hz": 1.0,
+          "stimulated_hz": 25.0,
+          "delta_hz": 24.0
+        },
+        "R": {
+          "n": 1,
+          "baseline_hz": 1.0,
+          "stimulated_hz": 1.0,
+          "delta_hz": 0.0
+        }
+      },
+      "DNp02": {
+        "L": {
+          "n": 1,
+          "baseline_hz": 1.0,
+          "stimulated_hz": 48.0,
+          "delta_hz": 47.0
+        },
+        "R": {
+          "n": 1,
+          "baseline_hz": 0.0,
+          "stimulated_hz": 0.0,
+          "delta_hz": 0.0
+        }
+      },
+      "DNa02": {
+        "L": {
+          "n": 1,
+          "baseline_hz": 1.0,
+          "stimulated_hz": 1.0,
+          "delta_hz": 0.0
+        },
+        "R": {
+          "n": 1,
+          "baseline_hz": 0.0,
+          "stimulated_hz": 0.0,
+          "delta_hz": 0.0
+        }
+      }
+    },
+    "most_changed_descending_neurons": [
+      {
+        "type": "DNp04",
+        "side": "L",
+        "n": 1,
+        "baseline_hz": 1.0,
+        "stimulated_hz": 49.0,
+        "delta_hz": 48.0
+      },
+      {
+        "type": "DNp02",
+        "side": "L",
+        "n": 1,
+        "baseline_hz": 1.0,
+        "stimulated_hz": 48.0,
+        "delta_hz": 47.0
+      },
+      {
+        "type": "DNp11",
+        "side": "L",
+        "n": 1,
+        "baseline_hz": 0.0,
+        "stimulated_hz": 25.0,
+        "delta_hz": 25.0
+      },
+      {
+        "type": "DNp01",
+        "side": "L",
+        "n": 1,
+        "baseline_hz": 1.0,
+        "stimulated_hz": 25.0,
+        "delta_hz": 24.0
+      },
+      {
+        "type": "DNp03",
+        "side": "L",
+        "n": 1,
+        "baseline_hz": 2.0,
+        "stimulated_hz": 25.0,
+        "delta_hz": 23.0
+      },
+      {
+        "type": "DNp05",
+        "side": "L",
+        "n": 1,
+        "baseline_hz": 1.0,
+        "stimulated_hz": 17.0,
+        "delta_hz": 16.0
+      },
+      {
+        "type": "DNg40",
+        "side": "L",
+        "n": 1,
+        "baseline_hz": 0.0,
+        "stimulated_hz": 14.0,
+        "delta_hz": 14.0
+      },
+      {
+        "type": "DNae004",
+        "side": "R",
+        "n": 1,
+        "baseline_hz": 2.0,
+        "stimulated_hz": 13.0,
+        "delta_hz": 11.0
+      },
+      {
+        "type": "DNp06",
+        "side": "L",
+        "n": 1,
+        "baseline_hz": 0.0,
+        "stimulated_hz": 10.0,
+        "delta_hz": 10.0
+      },
+      {
+        "type": "DNa05",
+        "side": "R",
+        "n": 1,
+        "baseline_hz": 1.0,
+        "stimulated_hz": 8.0,
+        "delta_hz": 7.0
+      },
+      {
+        "type": "DNpe021",
+        "side": "L",
+        "n": 1,
+        "baseline_hz": 0.0,
+        "stimulated_hz": 7.0,
+        "delta_hz": 7.0
+      },
+      {
+        "type": "DNg01",
+        "side": "R",
+        "n": 4,
+        "baseline_hz": 0.75,
+        "stimulated_hz": 7.5,
+        "delta_hz": 6.75
+      }
+    ],
+    "whole_brain": {
+      "baseline_mean_hz": 1.911,
+      "stimulated_mean_hz": 1.999,
+      "neurons_with_delta_over_5hz": 340
+    },
+    "wall_seconds": 9.4
+  },
+  "stim_LC4_L_scrambled": {
+    "stimulated": {
+      "types": [
+        "LC4"
+      ],
+      "side": "L",
+      "neurons": 71,
+      "amount": 0.8,
+      "duration_s": 1.0
+    },
+    "wiring": "scrambled (control)",
+    "watched": {
+      "DNp01": {
+        "L": {
+          "n": 1,
+          "baseline_hz": 3.0,
+          "stimulated_hz": 2.0,
+          "delta_hz": -1.0
+        },
+        "R": {
+          "n": 1,
+          "baseline_hz": 2.0,
+          "stimulated_hz": 3.0,
+          "delta_hz": 1.0
+        }
+      }
+    },
+    "most_changed_descending_neurons": [
+      {
+        "type": "DNa02",
+        "side": "L",
+        "n": 1,
+        "baseline_hz": 5.0,
+        "stimulated_hz": 2.0,
+        "delta_hz": -3.0
+      },
+      {
+        "type": "DNg111",
+        "side": "R",
+        "n": 1,
+        "baseline_hz": 3.0,
+        "stimulated_hz": 6.0,
+        "delta_hz": 3.0
+      },
+      {
+        "type": "DNg37",
+        "side": "L",
+        "n": 1,
+        "baseline_hz": 0.0,
+        "stimulated_hz": 3.0,
+        "delta_hz": 3.0
+      },
+      {
+        "type": "DNge055",
+        "side": "R",
+        "n": 1,
+        "baseline_hz": 0.0,
+        "stimulated_hz": 3.0,
+        "delta_hz": 3.0
+      },
+      {
+        "type": "DNge080",
+        "side": "R",
+        "n": 1,
+        "baseline_hz": 1.0,
+        "stimulated_hz": 4.0,
+        "delta_hz": 3.0
+      },
+      {
+        "type": "DNp60",
+        "side": "R",
+        "n": 1,
+        "baseline_hz": 0.0,
+        "stimulated_hz": 3.0,
+        "delta_hz": 3.0
+      },
+      {
+        "type": "DNpe024",
+        "side": "R",
+        "n": 1,
+        "baseline_hz": 3.0,
+        "stimulated_hz": 6.0,
+        "delta_hz": 3.0
+      },
+      {
+        "type": "DNa01",
+        "side": "R",
+        "n": 1,
+        "baseline_hz": 1.0,
+        "stimulated_hz": 3.0,
+        "delta_hz": 2.0
+      },
+      {
+        "type": "DNae007",
+        "side": "L",
+        "n": 1,
+        "baseline_hz": 2.0,
+        "stimulated_hz": 4.0,
+        "delta_hz": 2.0
+      },
+      {
+        "type": "DNae008",
+        "side": "R",
+        "n": 1,
+        "baseline_hz": 2.0,
+        "stimulated_hz": 4.0,
+        "delta_hz": 2.0
+      },
+      {
+        "type": "DNc01",
+        "side": "L",
+        "n": 1,
+        "baseline_hz": 1.0,
+        "stimulated_hz": 3.0,
+        "delta_hz": 2.0
+      },
+      {
+        "type": "DNd02",
+        "side": "R",
+        "n": 1,
+        "baseline_hz": 2.0,
+        "stimulated_hz": 4.0,
+        "delta_hz": 2.0
+      }
+    ],
+    "whole_brain": {
+      "baseline_mean_hz": 0.773,
+      "stimulated_mean_hz": 0.805,
+      "neurons_with_delta_over_5hz": 71
+    },
+    "wall_seconds": 1.9
+  }
+}

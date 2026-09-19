@@ -1,0 +1,6 @@
+flybrain>=0.1.0
+numpy>=2.0
+scipy>=1.13
+numba>=0.61
+anthropic>=1.7
+matplotlib>=3.8

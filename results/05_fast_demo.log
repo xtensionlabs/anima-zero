@@ -1,0 +1,403 @@
+﻿python : ANTHROPIC_API_KEY is set and takes precedence over the SDK's profile / federation auto-discovery; unset 
+ANTHROPIC_API_KEY to use the auto-discovered credential.
+At line:1 char:601
++ ...  numbers."; python -m anima.agent --model claude-fable-5-1 --effort m ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ANTHROPIC_API_K...red credential.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+[thinking] I need to plan this efficiently within 8 tool calls: trace LC4 to DNp01, then stimulate LC4 on the left 
+while watching DNp01 and DNp02, then run a scrambled control comparison. That gives roughly six calls—tracing, 
+stimulating, and toggling the scrambled flag on and off around a repeat stimulation.
+
+
+
+>> trace_paths({"source_type": "LC4", "target_type": "DNp01", "max_hops": 2})
+
+>> describe_type({"cell_type": "LC4", "top": 6})
+<< {
+ "from": "LC4",
+ "to": "DNp01",
+ "direct_input_fraction": 0.1718,
+ "direct_sign": "+",
+ "paths": [
+  {
+   "hops": 1,
+   "score": 0.171801,
+   "route": "LC4 -> DNp01",
+   "steps": [
+    {
+     "from": "LC4",
+     "to": "DNp01",
+     "input_fraction": 0.1718,
+     "sign": "+"
+    }
+   ]
+  },
+  {
+   "hops": 2,
+   "score": 0.005215,
+   "route": "LC4 -> SAD064 -> DNp01",
+   "steps": [
+    {
+     "from": "LC4",
+     "to": "SAD064",
+     "input_fraction": 0.1571,
+     "sign": "+"
+    },
+    {
+     "from": "SAD064",
+     "to": "DNp01",
+     "input_fraction": 0.0332,
+     "sign": "+"
+    }
+   ]
+  },
+  {
+   "hops": 2,
+   "score": 0.003795,
+   "route": "LC4 -> PVLP122b -> DNp01",
+   "steps": [
+    {
+     "from": "LC4",
+     "to": "PVLP122b",
+     "input_fraction": 0.1302,
+     "sign": "+"
+    },
+    {
+     "from": "PVLP122b",
+     "to": "DNp01",
+     "input_fraction": 0.0291,
+     "sign": "+"
+    }
+   ]
+  }
+ ],
+ "searched_hops": 2,
+ "note": "score = product of input fractions along the route; higher = stronger. Beam search, top 20 partners per 
+hop, so weak routes can be missed."
+}
+<< {
+ "type": "LC4",
+ "neurons": 126,
+ "sides": {
+  "L": 71,
+  "R": 55
+ },
+ "superclass": [
+  "visual_projection"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "PVLP024",
+   "neurons": 3,
+   "input_fraction": 0.6332,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "DNp04",
+   "neurons": 2,
+   "input_fraction": 0.5493,
+   "net_sign": "+",
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "CB3400",
+   "neurons": 2,
+   "input_fraction": 0.3004,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "CB2591,CB2917",
+   "neurons": 5,
+   "input_fraction": 0.2829,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "DNp02",
+   "neurons": 2,
+   "input_fraction": 0.2622,
+   "net_sign": "+",
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "PVLP021",
+   "neurons": 4,
+   "input_fraction": 0.2497,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  }
+ ],
+ "strongest_upstream": [
+  {
+   "type": "T2",
+   "neurons": 1630,
+   "input_fraction": 0.1505,
+   "net_sign": "+",
+   "superclass": [
+    "ol_intrinsic"
+   ]
+  },
+  {
+   "type": "TmY3",
+   "neurons": 824,
+   "input_fraction": 0.1339,
+   "net_sign": "+",
+   "superclass": [
+    "ol_intrinsic"
+   ]
+  },
+  {
+   "type": "Tm4",
+   "neurons": 1670,
+   "input_fraction": 0.1005,
+   "net_sign":...
+
+>> stimulate({"types": ["LC4"], "side": "L", "watch": ["DNp01", "DNp02", "DNp04"]})
+<< {
+ "stimulated": {
+  "types": [
+   "LC4"
+  ],
+  "side": "L",
+  "neurons": 71,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "real connectome",
+ "watched": {
+  "DNp01": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 25.0,
+    "delta_hz": 24.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNp02": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 48.0,
+    "delta_hz": 47.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNp04": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 49.0,
+    "delta_hz": 48.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": -1.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "DNp04",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 49.0,
+   "delta_hz": 48.0
+  },
+  {
+   "type": "DNp02",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 48.0,
+   "delta_hz": 47.0
+  },
+  {
+   "type": "DNp11",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 0.0,
+   "stimulated_hz": 25.0,
+   "delta_hz": 25.0
+  },
+  {
+   "type": "DNp01",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 25.0,
+   "delta_hz": 24.0
+  },
+  {
+   "type": "DNp03",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 2.0,
+   "stimulated_hz": 25.0,
+   "delta_hz": 23.0
+  },
+  {
+   "type": "DNp05",
+ ...
+
+>> set_scrambled({"enabled": true})
+<< {
+ "wiring": "scrambled (control)",
+ "note": "trace_paths/describe_type still report the REAL connectome; only stimulate() uses the control wiring."
+}
+
+>> stimulate({"types": ["LC4"], "side": "L", "watch": ["DNp01", "DNp02", "DNp04"]})
+<< {
+ "stimulated": {
+  "types": [
+   "LC4"
+  ],
+  "side": "L",
+  "neurons": 71,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "scrambled (control)",
+ "watched": {
+  "DNp01": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": -1.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 1.0
+   }
+  },
+  "DNp02": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 1.0
+   }
+  },
+  "DNp04": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 0.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "DNa02",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 5.0,
+   "stimulated_hz": 2.0,
+   "delta_hz": -3.0
+  },
+  {
+   "type": "DNg111",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 3.0,
+   "stimulated_hz": 6.0,
+   "delta_hz": 3.0
+  },
+  {
+   "type": "DNg37",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 0.0,
+   "stimulated_hz": 3.0,
+   "delta_hz": 3.0
+  },
+  {
+   "type": "DNge055",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 0.0,
+   "stimulated_hz": 3.0,
+   "delta_hz": 3.0
+  },
+  {
+   "type": "DNge080",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 4.0,
+   "delta_hz": 3.0
+  },
+  {
+   "type": "DNp60",
+   "sid...
+
+>> set_scrambled({"enabled": false})
+<< {
+ "wiring": "real connectome",
+ "note": "trace_paths/describe_type still report the REAL connectome; only stimulate() uses the control wiring."
+}
+
+I'll start with anatomy: the LC4→DNp01 routes and LC4's own connectivity profile.
+
+Anatomy predicts a direct monosynaptic excitatory LC4→DNp01 route (17% of DNp01's input), plus strong LC4 drive to DNp02 (26%) and DNp04 (55%). Now physiology: drive left LC4.
+
+Clean ipsilateral escape signature. Now the scrambled-wiring control.
+
+**Mechanism: left loom → left LC4 → ipsilateral escape DNs, mostly monosynaptic.**
+
+*Anatomy (real connectome):* LC4 (126 neurons; 71 L / 55 R; excitatory) synapses directly onto the giant fiber DNp01, supplying 17.2% of its input. Indirect routes (LC4→SAD064→DNp01, LC4→PVLP122b→DNp01) are ~30× weaker (scores 0.005, 0.004). LC4 also feeds DNp02 (26.2% of its input) and DNp04 (54.9%).
+
+*Physiology:* Driving the 71 left LC4 for 1 s (0.8/step) raised **left** DNp01 1→25 Hz (+24), **left** DNp02 1→48 Hz (+47), **left** DNp04 1→49 Hz (+48), plus DNp11 (+25), DNp03 (+23), DNp05 (+16). Right-side DNp01/02/04 were unchanged (0 to −1 Hz). Escape is thus lateralized: the looming-side LC4 population recruits the same-side takeoff command neurons.
+
+*Control:* With degree-preserving scrambled wiring, the identical stimulus produced no change in DNp01/02/04 (|Δ| ≤ 1 Hz); the largest DN change anywhere was −3 Hz. The effect depends on specific LC4→DN wiring, not on LC4's synapse count.
+
+*Caveats:* the drive is hand-set (not a real loom stimulus through photoreceptors/T2/TmY3), no plasticity or neuromodulation, one seed, and the model cannot predict actual takeoff kinematics — only which descending commands fire.

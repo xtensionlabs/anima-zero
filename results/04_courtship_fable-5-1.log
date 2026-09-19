@@ -1,0 +1,1452 @@
+﻿python : ANTHROPIC_API_KEY is set and takes precedence over the SDK's profile / federation auto-discovery; unset 
+ANTHROPIC_API_KEY to use the auto-discovered credential.
+At line:1 char:658
++ ... ol calls."; python -m anima.agent --model claude-fable-5-1 --effort h ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ANTHROPIC_API_K...red credential.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+[thinking] I should map out the courtship song circuit—pC1 hub neurons, the pIP10 descending pathway, and sensory 
+inputs spanning olfactory (Or47b/Or67d), gustatory (ppk23/ppk25, Gr32a), and visual (LC10a) channels feeding into 
+courtship behavior. I'll start with a broad overview before digging into specifics.
+
+
+
+>> overview({})
+
+>> search_types({"query": "pIP10"})
+
+>> search_types({"query": "P1"})
+
+>> search_types({"query": "pC1"})
+<< {
+ "neurons": 166700,
+ "connections": 25088107,
+ "cell_types": 11862,
+ "descending_neuron_types": 462,
+ "superclasses": {
+  "ol_intrinsic": 89403,
+  "cb_intrinsic": 32164,
+  "vnc_intrinsic": 13161,
+  "visual_projection": 9201,
+  "vnc_sensory": 6370,
+  "ol_sensory": 6098,
+  "cb_sensory": 4868,
+  "ascending_neuron": 1846,
+  "descending_neuron": 1314,
+  "vnc_motor": 708,
+  "visual_centrifugal": 563,
+  "sensory_ascending": 537,
+  "cb_motor": 107,
+  "vnc_efferent": 94,
+  "cb_endocrine": 72,
+  "ENS": 50,
+  "vnc_tbc": 38,
+  "vnc_sensory_tbc": 36,
+  "vnc_endocrine": 22,
+  "cb_sensory_tbc": 14,
+  "sensory_descending": 12,
+  "efferent_ascending": 8,
+  "cb_efferent": 4,
+  "efferent_descending": 4,
+  "descending_neuron_tbc": 2,
+  "sensory_ascending_tbc": 2,
+  "visual_projection_tbc": 2
+ },
+ "model": "leaky integrate-and-fire, 20 ms steps, weights = synapse count x transmitter sign, normalised per 
+postsynaptic neuron; tonic drive and noise hand-calibrated (flybrain 0.1.0)",
+ "dataset": "MaleCNS v1.0 (HHMI Janelia FlyEM, Google Research, Cambridge, MRC LMB; CC-BY)"
+}
+<< {
+ "query": "pIP10",
+ "matches": 1,
+ "types": [
+  {
+   "type": "pIP10",
+   "neurons": 2,
+   "superclass": [
+    "descending_neuron"
+   ]
+  }
+ ],
+ "matching_superclasses": []
+}
+<< {
+ "query": "P1",
+ "matches": 372,
+ "types": [
+  {
+   "type": "KCapbp-ap1",
+   "neurons": 197,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "Tlp1",
+   "neurons": 139,
+   "superclass": [
+    "ol_intrinsic"
+   ]
+  },
+  {
+   "type": "Tlp14",
+   "neurons": 58,
+   "superclass": [
+    "ol_intrinsic"
+   ]
+  },
+  {
+   "type": "SApp06,SApp15",
+   "neurons": 37,
+   "superclass": [
+    "sensory_ascending"
+   ]
+  },
+  {
+   "type": "SApp10",
+   "neurons": 37,
+   "superclass": [
+    "sensory_ascending"
+   ]
+  },
+  {
+   "type": "SNpp19",
+   "neurons": 35,
+   "superclass": [
+    "sensory_ascending",
+    "vnc_sensory"
+   ]
+  },
+  {
+   "type": "ORN_DP1l",
+   "neurons": 33,
+   "superclass": [
+    "cb_sensory"
+   ]
+  },
+  {
+   "type": "ORN_DP1m",
+   "neurons": 31,
+   "superclass": [
+    "cb_sensory"
+   ]
+  },
+  {
+   "type": "PLP115_b",
+   "neurons": 22,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "HRN_VP1d",
+   "neurons": 18,
+   "superclass": [
+    "cb_sensory"
+   ]
+  },
+  {
+   "type": "SNpp18",
+   "neurons": 18,
+   "superclass": [
+    "vnc_sensory"
+   ]
+  },
+  {
+   "type": "PLP188,PLP189",
+   "neurons": 16,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "AVLP190,AVLP191",
+   "neurons": 15,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SLP188",
+   "neurons": 14,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SMP106",
+   "neurons": 14,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SLP189",
+  ...
+<< {
+ "query": "pC1",
+ "matches": 49,
+ "types": [
+  {
+   "type": "pC1_16b",
+   "neurons": 8,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_19",
+   "neurons": 7,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_1a",
+   "neurons": 7,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_14a",
+   "neurons": 6,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_4a",
+   "neurons": 6,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_6a",
+   "neurons": 6,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1a,pC1c",
+   "neurons": 6,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_16a",
+   "neurons": 5,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_17b",
+   "neurons": 5,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_10b",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_10c",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_12b",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_13b",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_18b",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_2a",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_3c",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+ ...
+
+[thinking] pIP10 is a known descending neuron, and its P1 hub upstream is the pC1 cluster, which has many 
+subtypes. I want to trace pIP10's upstream connections and check likely sensory inputs like ppk23, Gr32a, Or47b, 
+and LC10a.
+
+
+
+>> describe_type({"cell_type": "pIP10", "top": 15})
+
+>> search_types({"query": "LC10"})
+
+>> search_types({"query": "ORN_VA1v"})
+
+>> search_types({"query": "ORN_DA1"})
+<< {
+ "type": "pIP10",
+ "neurons": 2,
+ "sides": {
+  "L": 1,
+  "R": 1
+ },
+ "superclass": [
+  "descending_neuron"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "AN08B061",
+   "neurons": 7,
+   "input_fraction": 0.1929,
+   "net_sign": "+",
+   "superclass": [
+    "ascending_neuron"
+   ]
+  },
+  {
+   "type": "TN1a_g",
+   "neurons": 4,
+   "input_fraction": 0.1581,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN00A013",
+   "neurons": 1,
+   "input_fraction": 0.1323,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "TN1a_d",
+   "neurons": 2,
+   "input_fraction": 0.131,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN12A030",
+   "neurons": 5,
+   "input_fraction": 0.1173,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "vPR9_b",
+   "neurons": 2,
+   "input_fraction": 0.1111,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "TN1a_i",
+   "neurons": 2,
+   "input_fraction": 0.1086,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "TN1a_b",
+   "neurons": 2,
+   "input_fraction": 0.0987,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "AN08B035",
+   "neurons": 1,
+   "input_fraction": 0.0881,
+   "net_sign": "+",
+   "superclass": [
+   ...
+<< {
+ "query": "LC10",
+ "matches": 7,
+ "types": [
+  {
+   "type": "LC10a",
+   "neurons": 275,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LC10c",
+   "neurons": 255,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LC10d",
+   "neurons": 214,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LC10e",
+   "neurons": 110,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LC10b",
+   "neurons": 95,
+   "superclass": [
+    "visual_projection"
+   ]
+  },
+  {
+   "type": "LC10_unclear",
+   "neurons": 11,
+   "superclass": [
+    "visual_projection",
+    "visual_projection_tbc"
+   ]
+  },
+  {
+   "type": "LC10f",
+   "neurons": 4,
+   "superclass": [
+    "visual_projection"
+   ]
+  }
+ ],
+ "matching_superclasses": []
+}
+<< {
+ "query": "ORN_VA1v",
+ "matches": 1,
+ "types": [
+  {
+   "type": "ORN_VA1v",
+   "neurons": 130,
+   "superclass": [
+    "cb_sensory"
+   ]
+  }
+ ],
+ "matching_superclasses": []
+}
+<< {
+ "query": "ORN_DA1",
+ "matches": 1,
+ "types": [
+  {
+   "type": "ORN_DA1",
+   "neurons": 204,
+   "superclass": [
+    "cb_sensory"
+   ]
+  }
+ ],
+ "matching_superclasses": []
+}
+
+[thinking] pIP10 receives input from pC1_14a and feeds downstream into TN1a, vPR9, and dPR1, matching the known 
+song production circuit. Now I want to trace the sensory pathways feeding into pC1_14a — likely candidates include 
+Or47b pheromone-sensing ORNs, Or67d/cVA-sensing ORNs, and visual LC10a neurons.
+
+
+
+[thinking] pIP10's outputs match the known song pattern-generating VNC neurons (TN1a, vPR9, dPR1), and its top 
+courtship-type input is pC1_14a, a P1/pC1 subtype. Next I'll trace routes from sensory populations to pIP10 and 
+characterize the pC1 hub.
+
+
+
+>> trace_paths({"source_type": "ORN_VA1v", "target_type": "pIP10", "max_hops": 4, "top": 5})
+
+>> trace_paths({"source_type": "LC10a", "target_type": "pIP10", "max_hops": 4, "top": 5})
+
+>> describe_type({"cell_type": "pC1_14a", "top": 12})
+<< {
+ "from": "ORN_VA1v",
+ "to": "pIP10",
+ "direct_input_fraction": 0.0,
+ "direct_sign": "+",
+ "paths": [
+  {
+   "hops": 3,
+   "score": 2.1e-05,
+   "route": "ORN_VA1v -> MZ_lv2PN -> PVLP217m -> pIP10",
+   "steps": [
+    {
+     "from": "ORN_VA1v",
+     "to": "MZ_lv2PN",
+     "input_fraction": 0.1774,
+     "sign": "+"
+    },
+    {
+     "from": "MZ_lv2PN",
+     "to": "PVLP217m",
+     "input_fraction": 0.0224,
+     "sign": "-"
+    },
+    {
+     "from": "PVLP217m",
+     "to": "pIP10",
+     "input_fraction": 0.0052,
+     "sign": "+"
+    }
+   ]
+  },
+  {
+   "hops": 4,
+   "score": 7e-06,
+   "route": "ORN_VA1v -> VA1v_vPN -> LHAV2b2a -> PVLP217m -> pIP10",
+   "steps": [
+    {
+     "from": "ORN_VA1v",
+     "to": "VA1v_vPN",
+     "input_fraction": 0.3451,
+     "sign": "+"
+    },
+    {
+     "from": "VA1v_vPN",
+     "to": "LHAV2b2a",
+     "input_fraction": 0.0855,
+     "sign": "-"
+    },
+    {
+     "from": "LHAV2b2a",
+     "to": "PVLP217m",
+     "input_fraction": 0.0428,
+     "sign": "+"
+    },
+    {
+     "from": "PVLP217m",
+     "to": "pIP10",
+     "input_fraction": 0.0052,
+     "sign": "+"
+    }
+   ]
+  }
+ ],
+ "searched_hops": 4,
+ "note": "score = product of input fractions along the route; higher = stronger. Beam search, top 20 partners per 
+hop, so weak routes can be missed."
+}
+<< {
+ "from": "LC10a",
+ "to": "pIP10",
+ "direct_input_fraction": 0.0,
+ "direct_sign": "+",
+ "paths": [
+  {
+   "hops": 3,
+   "score": 0.000171,
+   "route": "LC10a -> AOTU008 -> VES203m -> pIP10",
+   "steps": [
+    {
+     "from": "LC10a",
+     "to": "AOTU008",
+     "input_fraction": 0.2862,
+     "sign": "+"
+    },
+    {
+     "from": "AOTU008",
+     "to": "VES203m",
+     "input_fraction": 0.0679,
+     "sign": "+"
+    },
+    {
+     "from": "VES203m",
+     "to": "pIP10",
+     "input_fraction": 0.0088,
+     "sign": "+"
+    }
+   ]
+  },
+  {
+   "hops": 3,
+   "score": 9.3e-05,
+   "route": "LC10a -> AOTU008 -> AVLP702m -> pIP10",
+   "steps": [
+    {
+     "from": "LC10a",
+     "to": "AOTU008",
+     "input_fraction": 0.2862,
+     "sign": "+"
+    },
+    {
+     "from": "AOTU008",
+     "to": "AVLP702m",
+     "input_fraction": 0.0561,
+     "sign": "+"
+    },
+    {
+     "from": "AVLP702m",
+     "to": "pIP10",
+     "input_fraction": 0.0058,
+     "sign": "+"
+    }
+   ]
+  },
+  {
+   "hops": 4,
+   "score": 1.5e-05,
+   "route": "LC10a -> AOTU008 -> AOTU100m -> PVLP202m -> pIP10",
+   "steps": [
+    {
+     "from": "LC10a",
+     "to": "AOTU008",
+     "input_fraction": 0.2862,
+     "sign": "+"
+    },
+    {
+     "from": "AOTU008",
+     "to": "AOTU100m",
+     "input_fraction": 0.0688,
+     "sign": "+"
+    },
+    {
+     "from": "AOTU100m",
+     "to": "PVLP202m",
+     "input_fraction": 0.077,
+     "sign": "+"
+    },
+    {
+     "from": "PVLP202m",
+     "to": "pIP10",
+     "input_fraction": 0.0097,
+     "sign": ...
+<< {
+ "type": "pC1_14a",
+ "neurons": 6,
+ "sides": {
+  "L": 3,
+  "R": 3
+ },
+ "superclass": [
+  "cb_intrinsic"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "CL344",
+   "neurons": 4,
+   "input_fraction": 0.0982,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SIP141m",
+   "neurons": 6,
+   "input_fraction": 0.0905,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pMP2",
+   "neurons": 2,
+   "input_fraction": 0.0574,
+   "net_sign": "+",
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "SIP143m",
+   "neurons": 4,
+   "input_fraction": 0.0455,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SIP133m",
+   "neurons": 2,
+   "input_fraction": 0.0443,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SIP140m",
+   "neurons": 2,
+   "input_fraction": 0.0408,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_14a",
+   "neurons": 6,
+   "input_fraction": 0.0373,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pIP10",
+   "neurons": 2,
+   "input_fraction": 0.0262,
+   "net_sign": "+",
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "SIP109m",
+   "neurons": 4,
+   "input_fraction": 0.0194,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intr...
+
+[thinking] pC1_14a's dominant input is AN08B074, an ascending neuron that's likely part of a leg 
+gustatory/pheromone contact relay, and it also directly feeds pIP10. I want to trace AN08B074's pathways further, 
+and also check the direct pC1_14a → pIP10 connection.
+
+With about 9 calls left, I'll describe AN08B074, then run real and scrambled stimulations of both pC1_14a and 
+AN08B074 while watching pIP10 and pMP2, saving a spare call in case I want to test LC10a too.
+
+
+
+[thinking] I've found that pC1_14a's top input (12%) is ascending neuron AN08B074, which also feeds directly into 
+pIP10 — consistent with a gustatory pheromone relay from the VNC. I'll examine this connection further before 
+moving on to physiology.
+
+
+
+>> describe_type({"cell_type": "AN08B074", "top": 8})
+
+>> stimulate({"types": ["pC1_14a"], "amount": 0.8, "steps": 50, "watch": ["pIP10", "pMP2", "pC1_14a", "TN1a_g", 
+"vPR9_b", "dPR1"]})
+<< {
+ "type": "AN08B074",
+ "neurons": 6,
+ "sides": {
+  "L": 3,
+  "R": 3
+ },
+ "superclass": [
+  "ascending_neuron"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "VES024a",
+   "neurons": 4,
+   "input_fraction": 0.1281,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "AVLP255",
+   "neurons": 2,
+   "input_fraction": 0.1262,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_14a",
+   "neurons": 6,
+   "input_fraction": 0.1196,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "WED014",
+   "neurons": 4,
+   "input_fraction": 0.1188,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "AVLP736m",
+   "neurons": 2,
+   "input_fraction": 0.0895,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "VES024b",
+   "neurons": 2,
+   "input_fraction": 0.0811,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "TN1a_i",
+   "neurons": 2,
+   "input_fraction": 0.0649,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "AVLP096,AVLP256,AVLP255,WED014",
+   "neurons": 1,
+   "input_fraction": 0.064,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  }
+ ],
+ "strongest_upstream": [
+  {
+   "type": "AN08B084",
+   "neurons": 4,
+   "input_fraction": 0.095,...
+<< {
+ "stimulated": {
+  "types": [
+   "pC1_14a"
+  ],
+  "side": null,
+  "neurons": 6,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "real connectome",
+ "watched": {
+  "pIP10": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 3.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 4.0,
+    "delta_hz": 3.0
+   }
+  },
+  "pMP2": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 9.0,
+    "delta_hz": 9.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 7.0,
+    "delta_hz": 7.0
+   }
+  },
+  "pC1_14a": {
+   "L": {
+    "n": 3,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 42.0,
+    "delta_hz": 41.0
+   },
+   "R": {
+    "n": 3,
+    "baseline_hz": 0.67,
+    "stimulated_hz": 41.0,
+    "delta_hz": 40.33
+   }
+  },
+  "TN1a_g": {
+   "L": {
+    "n": 2,
+    "baseline_hz": 0.5,
+    "stimulated_hz": 4.5,
+    "delta_hz": 4.0
+   },
+   "R": {
+    "n": 2,
+    "baseline_hz": 0.5,
+    "stimulated_hz": 4.0,
+    "delta_hz": 3.5
+   }
+  },
+  "vPR9_b": {},
+  "dPR1": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 5.0,
+    "delta_hz": 4.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 5.0,
+    "delta_hz": 5.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "pMP2",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 0.0,
+   "stimulated_hz": 9.0,
+   "delta_hz": 9.0
+  },
+  {
+   "type": "pMP2",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 0.0,
+   "stimu...
+
+[thinking] Driving pC1_14a boosts pIP10, pMP2, and the VNC song neurons TN1a_g and dPR1. Next I want to stimulate 
+the sensory relay AN08B074 alongside a sensory input like ORN_VA1v or LC10a, then run scrambled controls -- I've 
+used 13 calls with 7 remaining.
+
+
+
+[thinking] Driving pC1_14a recruits pIP10, pMP2, and the premotor neurons TN1a_g and dPR1. Next I'll drive the 
+upstream sensory relays AN08B074 and LC10a to see their effect on the hub and pIP10.
+
+
+
+>> stimulate({"types": ["AN08B074"], "amount": 0.8, "steps": 50, "watch": ["pC1_14a", "pIP10", "pMP2", "TN1a_g", 
+"dPR1"]})
+
+>> stimulate({"types": ["LC10a"], "amount": 0.8, "steps": 50, "watch": ["AOTU008", "pC1_14a", "pIP10", "pMP2"]})
+<< {
+ "stimulated": {
+  "types": [
+   "AN08B074"
+  ],
+  "side": null,
+  "neurons": 6,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "real connectome",
+ "watched": {
+  "pC1_14a": {
+   "L": {
+    "n": 3,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 16.0,
+    "delta_hz": 15.0
+   },
+   "R": {
+    "n": 3,
+    "baseline_hz": 0.67,
+    "stimulated_hz": 15.0,
+    "delta_hz": 14.33
+   }
+  },
+  "pIP10": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 1.0
+   }
+  },
+  "pMP2": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 6.0,
+    "delta_hz": 6.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 6.0,
+    "delta_hz": 6.0
+   }
+  },
+  "TN1a_g": {
+   "L": {
+    "n": 2,
+    "baseline_hz": 0.5,
+    "stimulated_hz": 8.5,
+    "delta_hz": 8.0
+   },
+   "R": {
+    "n": 2,
+    "baseline_hz": 0.5,
+    "stimulated_hz": 6.5,
+    "delta_hz": 6.0
+   }
+  },
+  "dPR1": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 7.0,
+    "delta_hz": 6.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 6.0,
+    "delta_hz": 6.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "DNp36",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 10.0,
+   "delta_hz": 9.0
+  },
+  {
+   "type": "DNp36",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 8...
+<< {
+ "stimulated": {
+  "types": [
+   "LC10a"
+  ],
+  "side": null,
+  "neurons": 275,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "real connectome",
+ "watched": {
+  "AOTU008": {
+   "L": {
+    "n": 12,
+    "baseline_hz": 0.33,
+    "stimulated_hz": 19.75,
+    "delta_hz": 19.42
+   },
+   "R": {
+    "n": 13,
+    "baseline_hz": 0.92,
+    "stimulated_hz": 20.38,
+    "delta_hz": 19.46
+   }
+  },
+  "pC1_14a": {
+   "L": {
+    "n": 3,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 3.33,
+    "delta_hz": 2.33
+   },
+   "R": {
+    "n": 3,
+    "baseline_hz": 0.67,
+    "stimulated_hz": 3.0,
+    "delta_hz": 2.33
+   }
+  },
+  "pIP10": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 2.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 2.0
+   }
+  },
+  "pMP2": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 1.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 2.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "DNae002",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 0.0,
+   "stimulated_hz": 8.0,
+   "delta_hz": 8.0
+  },
+  {
+   "type": "DNb01",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 7.0,
+   "delta_hz": 6.0
+  },
+  {
+   "type": "DNg111",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 2.0,
+   "stimulated_hz": 8.0,
+   "delta_hz": 6.0
+  },
+  {
+   "type": "DNg111",
+   "side": "R",
+   "n": ...
+
+[thinking] Now I'll set up the scrambled control by enabling scrambled mode, stimulating pC1_14a and AN08B074 
+under that condition, then disabling scrambled mode again—using calls 16 through 19 for this sequence.
+
+
+
+>> set_scrambled({"enabled": true})
+<< {
+ "wiring": "scrambled (control)",
+ "note": "trace_paths/describe_type still report the REAL connectome; only stimulate() uses the control wiring."
+}
+
+>> stimulate({"types": ["pC1_14a"], "amount": 0.8, "steps": 50, "watch": ["pIP10", "pMP2", "pC1_14a", "TN1a_g", 
+"dPR1"]})
+
+>> stimulate({"types": ["AN08B074"], "amount": 0.8, "steps": 50, "watch": ["pC1_14a", "pIP10", "pMP2", "TN1a_g", 
+"dPR1"]})
+<< {
+ "stimulated": {
+  "types": [
+   "pC1_14a"
+  ],
+  "side": null,
+  "neurons": 6,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "scrambled (control)",
+ "watched": {
+  "pIP10": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 2.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 4.0,
+    "delta_hz": 1.0
+   }
+  },
+  "pMP2": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": -1.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 5.0,
+    "delta_hz": 2.0
+   }
+  },
+  "pC1_14a": {
+   "L": {
+    "n": 3,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 27.0,
+    "delta_hz": 26.0
+   },
+   "R": {
+    "n": 3,
+    "baseline_hz": 1.67,
+    "stimulated_hz": 28.33,
+    "delta_hz": 26.67
+   }
+  },
+  "TN1a_g": {
+   "L": {
+    "n": 2,
+    "baseline_hz": 0.5,
+    "stimulated_hz": 0.5,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 2,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.0
+   }
+  },
+  "dPR1": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 4.0,
+    "stimulated_hz": 5.0,
+    "delta_hz": 1.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "DNp31",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 2.0,
+   "stimulated_hz": 6.0,
+   "delta_hz": 4.0
+  },
+  {
+   "type": "DNc01",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz...
+<< {
+ "stimulated": {
+  "types": [
+   "AN08B074"
+  ],
+  "side": null,
+  "neurons": 6,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "scrambled (control)",
+ "watched": {
+  "pC1_14a": {
+   "L": {
+    "n": 3,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.33,
+    "delta_hz": 0.33
+   },
+   "R": {
+    "n": 3,
+    "baseline_hz": 1.67,
+    "stimulated_hz": 1.67,
+    "delta_hz": 0.0
+   }
+  },
+  "pIP10": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 1.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 4.0,
+    "delta_hz": 1.0
+   }
+  },
+  "pMP2": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 4.0,
+    "delta_hz": 1.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 4.0,
+    "delta_hz": 1.0
+   }
+  },
+  "TN1a_g": {
+   "L": {
+    "n": 2,
+    "baseline_hz": 0.5,
+    "stimulated_hz": 0.5,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 2,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.0
+   }
+  },
+  "dPR1": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 4.0,
+    "stimulated_hz": 5.0,
+    "delta_hz": 1.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "DNge037",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 4.0,
+   "delta_hz": 3.0
+  },
+  {
+   "type": "DNp11",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 2.0,
+   "stimulated_hz"...
+
+>> set_scrambled({"enabled": false})
+<< {
+ "wiring": "real connectome",
+ "note": "trace_paths/describe_type still report the REAL connectome; only stimulate() uses the control wiring."
+}
+
+I'll start with anatomy: find the candidate populations (sensory input, P1/pC1 hub, pIP10 song descending neuron).
+
+pIP10 is present. Let me look at its inputs and find candidate sensory populations (pheromone ORNs, LC10a visual pursuit neurons, leg gustatory ascending neurons).
+
+Now the critical control: same stimulations on degree-preserving scrambled wiring.
+
+Wiring restored to the real connectome. Here is the full picture (19 tool calls).
+
+## 1. Anatomy: sensory input → pC1 hub → pIP10 → song premotor circuit
+
+**Song command neuron — pIP10** (2 neurons, 1 L / 1 R, excitatory descending neuron). Its outputs in the VNC are precisely the wing‑song pattern-generator set known from the literature: TN1a_g (15.8% of their input), TN1a_d (13.1%), TN1a_i/b/a/h (8–11%), vPR9_b/c/a (7–11%), dPR1 (7.2%), plus ascending feedback neurons AN08B061 (19.3%). So pIP10 in this dataset is wired exactly as the song command neuron should be.
+
+**Central courtship hub — pC1_14a** (6 neurons, 3 L / 3 R, excitatory; a male pC1/P1-cluster subtype). It is the strongest *identified courtship-class* direct input to pIP10 (2.6% of pIP10's input, +), and also drives the other courtship DN **pMP2** (5.7% of pMP2's input). It has recurrent self-excitation (3.7% of its own input from itself) — the anatomical substrate for the persistent arousal state P1 neurons are known for — and reciprocal inhibition from SIP141m / ICL008m (the latter also inhibits pIP10 directly, 4.3%).
+
+**Sensory inputs into the hub**
+- *Contact chemosensation (legs → brain)*: the dominant input to pC1_14a is the ascending neuron **AN08B074** (12.0% of pC1_14a input, excitatory; 6 neurons). AN08B074 itself is driven from VNC neurons (AN08B084 9.5%, IN12A025 4.4%) — i.e. the leg gustatory/pheromone route, consistent with the ppk23/Gr32a → vAB3/PPN1-type ascending pathway. AN08B074 also bypasses the hub, synapsing directly onto pIP10 (1.6%) and onto TN1a_i (6.5%), and is itself excited by pMP2 (3.4%) — a brain↔VNC positive-feedback loop.
+- *Vision*: **LC10a** (275 visual projection neurons, the female-tracking channel) → AOTU008 (28.6% of AOTU008 input) → VES203m / AVLP702m → pIP10 (0.9% / 0.6%). Product-of-fractions path score 1.7×10⁻⁴, the strongest sensory route found, but reaching pIP10 largely *around* pC1_14a rather than through it.
+- *Olfaction*: ORN_VA1v (Or47b, female pheromone) → MZ_lv2PN → PVLP217m → pIP10 exists but is very weak (score 2×10⁻⁵; last hop 0.5%), and includes an inhibitory hop. No strong direct ORN→pC1 route was found within 4 hops.
+
+## 2. Physiology (real connectome, 0.8 drive, 1 s, both sides)
+
+| Stimulated | pC1_14a | pIP10 L / R | pMP2 L / R | TN1a_g L/R | dPR1 L/R |
+|---|---|---|---|---|---|
+| **pC1_14a** (hub) | 1→42 Hz | 0→3 / 1→4 (+3, +3) | 0→9 / 0→7 | +4.0 / +3.5 | +4 / +5 |
+| **AN08B074** (leg relay) | 1→16 Hz (+15) | 0→0 / 1→2 (+0, +1) | 0→6 / 0→6 | +8 / +6 | +6 / +6 |
+| **LC10a** (visual) | +2.3 / +2.3 | 0→2 / 1→3 (+2, +2) | +1 / +2 | – | – |
+
+- Driving the hub raises both pIP10s (+3 Hz each), makes pMP2 the single most-changed DN in the whole brain (+9/+7 Hz), and pulls the VNC song premotor neurons TN1a_g and dPR1 up 4–5 Hz — all polysynaptically consistent with the traced anatomy.
+- Driving the ascending relay AN08B074 excites the hub strongly (+15 Hz bilaterally, matching its 12% input fraction), recruits pMP2 (+6/+6) and drives the song premotor neurons even harder (TN1a_g +8/+6, dPR1 +6/+6) via its direct VNC collaterals — but pIP10 itself barely moved (+0/+1 Hz). It also recruited DNp36, aSP22 (a fru⁺ courtship DN) and DNp13 (+4/+4). The model therefore says: this relay reaches the song machinery both through the hub and directly, and pIP10's own firing is a bottleneck that 1 s of relay drive doesn't fully open.
+- LC10a drive produced a broad visuomotor response (1,093 neurons >5 Hz; DNae002, DNb01, DNg111, DNa02 steering) with only modest pC1_14a (+2.3) and pIP10 (+2/+2) recruitment — consistent with LC10a being a pursuit/orientation channel rather than the song trigger per se.
+
+## 3. Scrambled-wiring control (degree-preserving)
+
+| Stimulated (scrambled) | pC1_14a | pIP10 L / R | pMP2 L / R | TN1a_g | dPR1 |
+|---|---|---|---|---|---|
+| pC1_14a | 1→27 Hz | +2 / +1 | −1 / +2 | 0 / 0 | 0 / +1 |
+| AN08B074 | **+0.3 / 0** | +1 / +1 | +1 / +1 | 0 / 0 | 0 / +1 |
+
+With identical degrees but randomised partners, the AN08B074 → pC1_14a link vanished (+15 Hz → +0.3 Hz), the pC1_14a → pMP2 drive vanished (+9/+7 → −1/+2), and the recruitment of TN1a_g / dPR1 song premotor neurons vanished (+4–8 Hz → 0). pIP10 showed a residual +1–2 Hz in scrambled runs, so the pIP10 effect is the weakest and least control-separated link in the chain (real +3/+3 vs scrambled +2/+1); the hub → pMP2 → VNC song premotor effects are clearly specific to the real wiring.
+
+## 4. Conclusion
+
+Leg-contact ascending neurons (AN08B074, 12%) → pC1_14a hub (recurrent, self-exciting) → pIP10 (2.6%) and pMP2 (5.7%) → TN1a / vPR9 / dPR1 song pattern generators. The hub-to-song-circuit stage is real-wiring–specific; the visual (LC10a→AOTU008) and olfactory (Or47b) routes reach pIP10 only weakly and mostly around the hub.
+
+## 5. What the model cannot tell you
+
+- **No plasticity or state**: P1/pC1 activity in real flies integrates over seconds–minutes (persistent arousal, dopamine/neuromodulator gating, mating status, courtship experience). This LIF network has fixed weights and no neuromodulation, so it cannot show why the same female cue sings in one male and not another.
+- **Sensory relays bypassed**: I drove central/ascending neurons directly with a hand-calibrated current; real pheromone-evoked responses in ORNs or ppk23 leg neurons, and the transduction gain to AN08B074, are not modelled. The transmitter signs are predicted, not measured, and the ICL008m/SIP141m inhibitory loops could dominate at physiological drive levels.
+- **Rates, not song**: pIP10 going 0→3 Hz for 1 s says nothing about pulse vs sine song, inter-pulse interval, or the wing-motor output — I stopped at the premotor neurons. Absolute Hz values depend on hand-tuned tonic drive and noise (note baseline mean rates differed between real, 1.91 Hz, and scrambled, 0.77 Hz, runs).
+- **Type-level lumping**: pC1 has ~49 subtypes here; I tested only pC1_14a because it was pIP10's strongest pC1 input. Other subtypes (e.g. pC1a/c, which pC1_14a excites) likely contribute and could be tested with the remaining budget. Beam-search path tracing (top-20 partners/hop) can miss weak but numerous parallel routes, especially from olfaction.
+- **Single seed, 1 s**: no statistics across seeds; the ±1–2 Hz changes (e.g. pIP10 in the scrambled control) are at noise level, whereas the +6 to +15 Hz hub and premotor effects are well above it.

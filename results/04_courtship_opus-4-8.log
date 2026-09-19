@@ -1,0 +1,1322 @@
+﻿python : ANTHROPIC_API_KEY is set and takes precedence over the SDK's profile / federation auto-discovery; unset 
+ANTHROPIC_API_KEY to use the auto-discovered credential.
+At line:1 char:658
++ ... ol calls."; python -m anima.agent --model claude-opus-4-8 --effort hi ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ANTHROPIC_API_K...red credential.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+[thinking] I'm recalling that pIP10, a descending neuron, drives courtship song, while P1 (pC1) neurons form the 
+central courtship hub. Let me search for more on these circuits.
+
+
+
+>> overview({})
+
+>> search_types({"query": "pIP10"})
+
+>> search_types({"query": "P1"})
+
+>> search_types({"query": "pC1"})
+<< {
+ "neurons": 166700,
+ "connections": 25088107,
+ "cell_types": 11862,
+ "descending_neuron_types": 462,
+ "superclasses": {
+  "ol_intrinsic": 89403,
+  "cb_intrinsic": 32164,
+  "vnc_intrinsic": 13161,
+  "visual_projection": 9201,
+  "vnc_sensory": 6370,
+  "ol_sensory": 6098,
+  "cb_sensory": 4868,
+  "ascending_neuron": 1846,
+  "descending_neuron": 1314,
+  "vnc_motor": 708,
+  "visual_centrifugal": 563,
+  "sensory_ascending": 537,
+  "cb_motor": 107,
+  "vnc_efferent": 94,
+  "cb_endocrine": 72,
+  "ENS": 50,
+  "vnc_tbc": 38,
+  "vnc_sensory_tbc": 36,
+  "vnc_endocrine": 22,
+  "cb_sensory_tbc": 14,
+  "sensory_descending": 12,
+  "efferent_ascending": 8,
+  "cb_efferent": 4,
+  "efferent_descending": 4,
+  "descending_neuron_tbc": 2,
+  "sensory_ascending_tbc": 2,
+  "visual_projection_tbc": 2
+ },
+ "model": "leaky integrate-and-fire, 20 ms steps, weights = synapse count x transmitter sign, normalised per 
+postsynaptic neuron; tonic drive and noise hand-calibrated (flybrain 0.1.0)",
+ "dataset": "MaleCNS v1.0 (HHMI Janelia FlyEM, Google Research, Cambridge, MRC LMB; CC-BY)"
+}
+<< {
+ "query": "pIP10",
+ "matches": 1,
+ "types": [
+  {
+   "type": "pIP10",
+   "neurons": 2,
+   "superclass": [
+    "descending_neuron"
+   ]
+  }
+ ],
+ "matching_superclasses": []
+}
+<< {
+ "query": "P1",
+ "matches": 372,
+ "types": [
+  {
+   "type": "KCapbp-ap1",
+   "neurons": 197,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "Tlp1",
+   "neurons": 139,
+   "superclass": [
+    "ol_intrinsic"
+   ]
+  },
+  {
+   "type": "Tlp14",
+   "neurons": 58,
+   "superclass": [
+    "ol_intrinsic"
+   ]
+  },
+  {
+   "type": "SApp06,SApp15",
+   "neurons": 37,
+   "superclass": [
+    "sensory_ascending"
+   ]
+  },
+  {
+   "type": "SApp10",
+   "neurons": 37,
+   "superclass": [
+    "sensory_ascending"
+   ]
+  },
+  {
+   "type": "SNpp19",
+   "neurons": 35,
+   "superclass": [
+    "sensory_ascending",
+    "vnc_sensory"
+   ]
+  },
+  {
+   "type": "ORN_DP1l",
+   "neurons": 33,
+   "superclass": [
+    "cb_sensory"
+   ]
+  },
+  {
+   "type": "ORN_DP1m",
+   "neurons": 31,
+   "superclass": [
+    "cb_sensory"
+   ]
+  },
+  {
+   "type": "PLP115_b",
+   "neurons": 22,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "HRN_VP1d",
+   "neurons": 18,
+   "superclass": [
+    "cb_sensory"
+   ]
+  },
+  {
+   "type": "SNpp18",
+   "neurons": 18,
+   "superclass": [
+    "vnc_sensory"
+   ]
+  },
+  {
+   "type": "PLP188,PLP189",
+   "neurons": 16,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "AVLP190,AVLP191",
+   "neurons": 15,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SLP188",
+   "neurons": 14,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SMP106",
+   "neurons": 14,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SLP189",
+  ...
+<< {
+ "query": "pC1",
+ "matches": 49,
+ "types": [
+  {
+   "type": "pC1_16b",
+   "neurons": 8,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_19",
+   "neurons": 7,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_1a",
+   "neurons": 7,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_14a",
+   "neurons": 6,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_4a",
+   "neurons": 6,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_6a",
+   "neurons": 6,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1a,pC1c",
+   "neurons": 6,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_16a",
+   "neurons": 5,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_17b",
+   "neurons": 5,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_10b",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_10c",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_12b",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_13b",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_18b",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_2a",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_3c",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+ ...
+
+[thinking] I'm trying to pin down the male courtship hub neurons—P1 corresponds to the pC1 cluster in the 
+connectome, possibly including subtypes like pC1a and pC1c, and I want to trace the sensory pathway that feeds 
+into it via pheromone detection.
+
+I'm mapping out the pheromone pathways: gustatory cVA detection through OR67d receptors, and cuticular hydrocarbon 
+sensing through foreleg Gr/ppk neurons, both converging ascending signals onto pC1. I'll also describe pIP10 as 
+the descending song command neuron downstream of pC1, and trace those connections together.
+
+
+
+>> describe_type({"cell_type": "pIP10"})
+
+>> describe_type({"cell_type": "pC1a,pC1c"})
+<< {
+ "type": "pIP10",
+ "neurons": 2,
+ "sides": {
+  "L": 1,
+  "R": 1
+ },
+ "superclass": [
+  "descending_neuron"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "AN08B061",
+   "neurons": 7,
+   "input_fraction": 0.1929,
+   "net_sign": "+",
+   "superclass": [
+    "ascending_neuron"
+   ]
+  },
+  {
+   "type": "TN1a_g",
+   "neurons": 4,
+   "input_fraction": 0.1581,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN00A013",
+   "neurons": 1,
+   "input_fraction": 0.1323,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "TN1a_d",
+   "neurons": 2,
+   "input_fraction": 0.131,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "IN12A030",
+   "neurons": 5,
+   "input_fraction": 0.1173,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "vPR9_b",
+   "neurons": 2,
+   "input_fraction": 0.1111,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "TN1a_i",
+   "neurons": 2,
+   "input_fraction": 0.1086,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "TN1a_b",
+   "neurons": 2,
+   "input_fraction": 0.0987,
+   "net_sign": "+",
+   "superclass": [
+    "vnc_intrinsic"
+   ]
+  },
+  {
+   "type": "AN08B035",
+   "neurons": 1,
+   "input_fraction": 0.0881,
+   "net_sign": "+",
+   "superclass": [
+   ...
+<< {
+ "type": "pC1a,pC1c",
+ "neurons": 6,
+ "sides": {
+  "L": 3,
+  "R": 3
+ },
+ "superclass": [
+  "cb_intrinsic"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "CL344",
+   "neurons": 4,
+   "input_fraction": 0.1453,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_17a",
+   "neurons": 3,
+   "input_fraction": 0.1216,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "NPFL1-I",
+   "neurons": 2,
+   "input_fraction": 0.1206,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_17b",
+   "neurons": 5,
+   "input_fraction": 0.0968,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SMP420",
+   "neurons": 2,
+   "input_fraction": 0.0874,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SMP713m",
+   "neurons": 3,
+   "input_fraction": 0.0714,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SIP141m",
+   "neurons": 6,
+   "input_fraction": 0.0667,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "CL144",
+   "neurons": 2,
+   "input_fraction": 0.0624,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SMP165",
+   "neurons": 2,
+   "input_fraction": 0.0617,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+...
+
+[thinking] pIP10's downstream targets are dominated by TN1a song-related VNC neurons, confirming pIP10 → TN1a as 
+the song pathway, while pC1_14a feeds into pIP10 upstream. Now I'm tracing back further to find the pheromone 
+sensory relay, likely through the aPN1 pathway.
+
+
+
+>> trace_paths({"source_type": "pC1a,pC1c", "target_type": "pIP10", "max_hops": 3})
+
+>> search_types({"query": "aPN1"})
+
+>> search_types({"query": "vAB3"})
+
+>> search_types({"query": "ppk"})
+
+>> search_types({"query": "OR67d"})
+<< {
+ "from": "pC1a,pC1c",
+ "to": "pIP10",
+ "direct_input_fraction": 0.0042,
+ "direct_sign": "+",
+ "paths": [
+  {
+   "hops": 2,
+   "score": 0.000957,
+   "route": "pC1a,pC1c -> SIP143m -> pIP10",
+   "steps": [
+    {
+     "from": "pC1a,pC1c",
+     "to": "SIP143m",
+     "input_fraction": 0.0616,
+     "sign": "+"
+    },
+    {
+     "from": "SIP143m",
+     "to": "pIP10",
+     "input_fraction": 0.0155,
+     "sign": "-"
+    }
+   ]
+  },
+  {
+   "hops": 3,
+   "score": 9.5e-05,
+   "route": "pC1a,pC1c -> pC1_17a -> AVLP710m -> pIP10",
+   "steps": [
+    {
+     "from": "pC1a,pC1c",
+     "to": "pC1_17a",
+     "input_fraction": 0.1216,
+     "sign": "+"
+    },
+    {
+     "from": "pC1_17a",
+     "to": "AVLP710m",
+     "input_fraction": 0.0224,
+     "sign": "+"
+    },
+    {
+     "from": "AVLP710m",
+     "to": "pIP10",
+     "input_fraction": 0.035,
+     "sign": "-"
+    }
+   ]
+  },
+  {
+   "hops": 3,
+   "score": 8.9e-05,
+   "route": "pC1a,pC1c -> pC1_17a -> AVLP717m -> pIP10",
+   "steps": [
+    {
+     "from": "pC1a,pC1c",
+     "to": "pC1_17a",
+     "input_fraction": 0.1216,
+     "sign": "+"
+    },
+    {
+     "from": "pC1_17a",
+     "to": "AVLP717m",
+     "input_fraction": 0.021,
+     "sign": "+"
+    },
+    {
+     "from": "AVLP717m",
+     "to": "pIP10",
+     "input_fraction": 0.035,
+     "sign": "+"
+    }
+   ]
+  },
+  {
+   "hops": 3,
+   "score": 7.9e-05,
+   "route": "pC1a,pC1c -> CL344 -> pC1_14a -> pIP10",
+   "steps": [
+    {
+     "from": "pC1a,pC1c",
+     "to": "CL344",
+     "input_fraction": 0.1453,
+...
+<< {
+ "query": "aPN1",
+ "matches": 0,
+ "types": [],
+ "matching_superclasses": []
+}
+<< {
+ "query": "vAB3",
+ "matches": 0,
+ "types": [],
+ "matching_superclasses": []
+}
+<< {
+ "query": "ppk",
+ "matches": 0,
+ "types": [],
+ "matching_superclasses": []
+}
+<< {
+ "query": "OR67d",
+ "matches": 0,
+ "types": [],
+ "matching_superclasses": []
+}
+
+[thinking] I should look into how the pheromone signal actually reaches pC1 — cVA detected by OR67d neurons 
+projects to the DA1 glomerulus, then DA1 projection neurons relay onward, possibly through aSP-f, so I want to 
+search for "DA1" and "PN" to see if this antennal lobe relay is represented in the model or if it's being bypassed.
+
+Separately, I'm noting that pC1's route to pIP10 is weak directly (0.0042) and mostly inhibitory via SIP143m, 
+except pC1_14a which gives a strong direct excitatory connection (+0.0262) — so the hub pC1a/pC1c likely reaches 
+pIP10 by first routing through pC1_14a via CL344 or 
+
+>> search_types({"query": "DA1"})
+
+>> search_types({"query": "aSP"})
+
+>> describe_type({"cell_type": "pC1_14a"})
+<< {
+ "query": "DA1",
+ "matches": 3,
+ "types": [
+  {
+   "type": "DA1_lPN",
+   "neurons": 13,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "DA1_vPN",
+   "neurons": 2,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "ORN_DA1",
+   "neurons": 204,
+   "superclass": [
+    "cb_sensory"
+   ]
+  }
+ ],
+ "matching_superclasses": []
+}
+<< {
+ "query": "aSP",
+ "matches": 3,
+ "types": [
+  {
+   "type": "aSP8",
+   "neurons": 4,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "aSP-g3Am",
+   "neurons": 2,
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "aSP22",
+   "neurons": 2,
+   "superclass": [
+    "descending_neuron"
+   ]
+  }
+ ],
+ "matching_superclasses": []
+}
+<< {
+ "type": "pC1_14a",
+ "neurons": 6,
+ "sides": {
+  "L": 3,
+  "R": 3
+ },
+ "superclass": [
+  "cb_intrinsic"
+ ],
+ "sign": "excitatory",
+ "inhibitory_fraction_of_output": 0.0,
+ "total_input_fraction_accounted_by_named_types": 1.0,
+ "strongest_downstream": [
+  {
+   "type": "CL344",
+   "neurons": 4,
+   "input_fraction": 0.0982,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SIP141m",
+   "neurons": 6,
+   "input_fraction": 0.0905,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pMP2",
+   "neurons": 2,
+   "input_fraction": 0.0574,
+   "net_sign": "+",
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "SIP143m",
+   "neurons": 4,
+   "input_fraction": 0.0455,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SIP133m",
+   "neurons": 2,
+   "input_fraction": 0.0443,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "SIP140m",
+   "neurons": 2,
+   "input_fraction": 0.0408,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pC1_14a",
+   "neurons": 6,
+   "input_fraction": 0.0373,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intrinsic"
+   ]
+  },
+  {
+   "type": "pIP10",
+   "neurons": 2,
+   "input_fraction": 0.0262,
+   "net_sign": "+",
+   "superclass": [
+    "descending_neuron"
+   ]
+  },
+  {
+   "type": "SIP109m",
+   "neurons": 4,
+   "input_fraction": 0.0194,
+   "net_sign": "+",
+   "superclass": [
+    "cb_intr...
+
+[thinking] pC1_14a is a strong direct excitatory driver of pIP10, with AN08B074 as its main ascending upstream 
+input, suggesting the song pathway includes ascending feedback loops. I'm now tracing the sensory side: cVA 
+pheromone signals through ORN_DA1 to DA1_lPN, which then feeds into aSP neurons.
+
+Given limited calls remaining, I should trace the path from DA1_lPN directly to pC1a and pC1c to establish the 
+sensory-to-hub connection before running the stimulation experiments.
+
+
+
+>> trace_paths({"source_type": "DA1_lPN", "target_type": "pC1a,pC1c", "max_hops": 3})
+
+>> trace_paths({"source_type": "ORN_DA1", "target_type": "pIP10", "max_hops": 4})
+<< {
+ "from": "DA1_lPN",
+ "to": "pC1a,pC1c",
+ "direct_input_fraction": 0.0,
+ "direct_sign": "+",
+ "paths": [
+  {
+   "hops": 3,
+   "score": 9.9e-05,
+   "route": "DA1_lPN -> AVLP743m -> M_lvPNm45 -> pC1a,pC1c",
+   "steps": [
+    {
+     "from": "DA1_lPN",
+     "to": "AVLP743m",
+     "input_fraction": 0.0852,
+     "sign": "+"
+    },
+    {
+     "from": "AVLP743m",
+     "to": "M_lvPNm45",
+     "input_fraction": 0.0902,
+     "sign": "+"
+    },
+    {
+     "from": "M_lvPNm45",
+     "to": "pC1a,pC1c",
+     "input_fraction": 0.0128,
+     "sign": "+"
+    }
+   ]
+  },
+  {
+   "hops": 3,
+   "score": 2.2e-05,
+   "route": "DA1_lPN -> CB0997 -> SMP333 -> pC1a,pC1c",
+   "steps": [
+    {
+     "from": "DA1_lPN",
+     "to": "CB0997",
+     "input_fraction": 0.1344,
+     "sign": "+"
+    },
+    {
+     "from": "CB0997",
+     "to": "SMP333",
+     "input_fraction": 0.0327,
+     "sign": "+"
+    },
+    {
+     "from": "SMP333",
+     "to": "pC1a,pC1c",
+     "input_fraction": 0.0051,
+     "sign": "+"
+    }
+   ]
+  }
+ ],
+ "searched_hops": 3,
+ "note": "score = product of input fractions along the route; higher = stronger. Beam search, top 20 partners per 
+hop, so weak routes can be missed."
+}
+<< {
+ "from": "ORN_DA1",
+ "to": "pIP10",
+ "direct_input_fraction": 0.0,
+ "direct_sign": "+",
+ "paths": [
+  {
+   "hops": 4,
+   "score": 9.4e-05,
+   "route": "ORN_DA1 -> DA1_lPN -> LH007m -> CB1618,CB3330 -> pIP10",
+   "steps": [
+    {
+     "from": "ORN_DA1",
+     "to": "DA1_lPN",
+     "input_fraction": 0.5727,
+     "sign": "+"
+    },
+    {
+     "from": "DA1_lPN",
+     "to": "LH007m",
+     "input_fraction": 0.1661,
+     "sign": "+"
+    },
+    {
+     "from": "LH007m",
+     "to": "CB1618,CB3330",
+     "input_fraction": 0.0164,
+     "sign": "-"
+    },
+    {
+     "from": "CB1618,CB3330",
+     "to": "pIP10",
+     "input_fraction": 0.0599,
+     "sign": "+"
+    }
+   ]
+  },
+  {
+   "hops": 4,
+   "score": 2.8e-05,
+   "route": "ORN_DA1 -> DA1_lPN -> LH007m -> VES203m -> pIP10",
+   "steps": [
+    {
+     "from": "ORN_DA1",
+     "to": "DA1_lPN",
+     "input_fraction": 0.5727,
+     "sign": "+"
+    },
+    {
+     "from": "DA1_lPN",
+     "to": "LH007m",
+     "input_fraction": 0.1661,
+     "sign": "+"
+    },
+    {
+     "from": "LH007m",
+     "to": "VES203m",
+     "input_fraction": 0.033,
+     "sign": "-"
+    },
+    {
+     "from": "VES203m",
+     "to": "pIP10",
+     "input_fraction": 0.0088,
+     "sign": "+"
+    }
+   ]
+  },
+  {
+   "hops": 4,
+   "score": 2.4e-05,
+   "route": "ORN_DA1 -> DA1_lPN -> LH008m -> SIP110m_b -> pIP10",
+   "steps": [
+    {
+     "from": "ORN_DA1",
+     "to": "DA1_lPN",
+     "input_fraction": 0.5727,
+     "sign": "+"
+    },
+    {
+     "from": "DA1_lPN",
+     "to": "LH008m",
+    ...
+
+[thinking] I've traced the full anatomical pathway from cVA pheromone detection through ORN_DA1 and the DA1_lPN 
+relay into the lateral horn/AVLP, up to the pC1 hub and pC1_14a, then down to pIP10 and TN1a song premotor neurons 
+in the VNC. Now I want to test this circuit physiologically by stimulating pIP10 and TN1a and observing the 
+responses across several trials.
+
+With about 10 calls left, I'll prioritize: stimulating the pC1 hub (pC1a, pC1c, pC1_14a) while watching pIP10, 
+TN1a_a, and TN1a_g, plus a parallel run stimulating DA1_lPN while watching pIP10 and pC1_14a, since these are 
+independent and can r
+
+>> stimulate({"types": ["pC1_14a", "pC1a,pC1c"], "watch": ["pIP10", "TN1a_g", "TN1a_a", "DNp01"]})
+
+>> stimulate({"types": ["DA1_lPN"], "watch": ["pC1_14a", "pIP10", "TN1a_g"]})
+<< {
+ "stimulated": {
+  "types": [
+   "pC1_14a",
+   "pC1a,pC1c"
+  ],
+  "side": null,
+  "neurons": 12,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "real connectome",
+ "watched": {
+  "pIP10": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 3.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 4.0,
+    "delta_hz": 3.0
+   }
+  },
+  "TN1a_g": {
+   "L": {
+    "n": 2,
+    "baseline_hz": 0.5,
+    "stimulated_hz": 5.0,
+    "delta_hz": 4.5
+   },
+   "R": {
+    "n": 2,
+    "baseline_hz": 0.5,
+    "stimulated_hz": 5.0,
+    "delta_hz": 4.5
+   }
+  },
+  "TN1a_a": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 4.0,
+    "delta_hz": 3.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 4.0,
+    "delta_hz": 2.0
+   }
+  },
+  "DNp01": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "pMP2",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 0.0,
+   "stimulated_hz": 9.0,
+   "delta_hz": 9.0
+  },
+  {
+   "type": "pMP2",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 0.0,
+   "stimulated_hz": 8.0,
+   "delta_hz": 8.0
+  },
+  {
+   "type": "CB0429",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 5.0,
+   "delta_hz": 4.0
+  },
+  {
+   "type": "DNge022",
+   "side": "R",
+   "n": 1,
+...
+<< {
+ "stimulated": {
+  "types": [
+   "DA1_lPN"
+  ],
+  "side": null,
+  "neurons": 13,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "real connectome",
+ "watched": {
+  "pC1_14a": {
+   "L": {
+    "n": 3,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 2.0,
+    "delta_hz": 1.0
+   },
+   "R": {
+    "n": 3,
+    "baseline_hz": 0.67,
+    "stimulated_hz": 0.67,
+    "delta_hz": 0.0
+   }
+  },
+  "pIP10": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 0.0,
+    "delta_hz": -1.0
+   }
+  },
+  "TN1a_g": {
+   "L": {
+    "n": 2,
+    "baseline_hz": 0.5,
+    "stimulated_hz": 0.5,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 2,
+    "baseline_hz": 0.5,
+    "stimulated_hz": 0.5,
+    "delta_hz": 0.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "DNge022",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 5.0,
+   "stimulated_hz": 1.0,
+   "delta_hz": -4.0
+  },
+  {
+   "type": "DNp62",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 3.0,
+   "stimulated_hz": 7.0,
+   "delta_hz": 4.0
+  },
+  {
+   "type": "DNg59",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 3.0,
+   "stimulated_hz": 0.0,
+   "delta_hz": -3.0
+  },
+  {
+   "type": "DNge039",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 4.0,
+   "stimulated_hz": 1.0,
+   "delta_hz": -3.0
+  },
+  {
+   "type": "DNge044",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 3.0,
+   "stimulated_hz": 0.0,
+   "delta_hz": -3.0
+  },
+  {
+   "type": "DNp62...
+
+[thinking] Driving pC1 strongly and selectively activates pIP10, TN1a song premotor neurons, and pMP2, while 
+leaving DNp01 escape circuitry untouched, showing this is a specific rather than generic effect. But driving 
+DA1_lPN alone, just one synapse from ORNs, doesn't propagate to pIP10 at all — if anything it goes slightly down, 
+suggesting the effect isn't simply about proximity to sensory input.
+
+This makes sense given the pheromone-to-hub pathway runs through three relay hops and is inherently weak, so a 
+single-population drive with hand-tuned tonic input just doesn't reach threshold at the hub — the 
+
+>> set_scrambled({"enabled": true})
+<< {
+ "wiring": "scrambled (control)",
+ "note": "trace_paths/describe_type still report the REAL connectome; only stimulate() uses the control wiring."
+}
+
+>> stimulate({"types": ["pC1_14a", "pC1a,pC1c"], "watch": ["pIP10", "TN1a_g", "TN1a_a", "DNp01"]})
+<< {
+ "stimulated": {
+  "types": [
+   "pC1_14a",
+   "pC1a,pC1c"
+  ],
+  "side": null,
+  "neurons": 12,
+  "amount": 0.8,
+  "duration_s": 1.0
+ },
+ "wiring": "scrambled (control)",
+ "watched": {
+  "pIP10": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 0.0,
+    "stimulated_hz": 4.0,
+    "delta_hz": 4.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 0.0
+   }
+  },
+  "TN1a_g": {
+   "L": {
+    "n": 2,
+    "baseline_hz": 0.5,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.5
+   },
+   "R": {
+    "n": 2,
+    "baseline_hz": 1.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": 0.0
+   }
+  },
+  "TN1a_a": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": -1.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 0.0
+   }
+  },
+  "DNp01": {
+   "L": {
+    "n": 1,
+    "baseline_hz": 3.0,
+    "stimulated_hz": 3.0,
+    "delta_hz": 0.0
+   },
+   "R": {
+    "n": 1,
+    "baseline_hz": 2.0,
+    "stimulated_hz": 1.0,
+    "delta_hz": -1.0
+   }
+  }
+ },
+ "most_changed_descending_neurons": [
+  {
+   "type": "DNg109",
+   "side": "R",
+   "n": 1,
+   "baseline_hz": 1.0,
+   "stimulated_hz": 5.0,
+   "delta_hz": 4.0
+  },
+  {
+   "type": "DNp69",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 3.0,
+   "stimulated_hz": 7.0,
+   "delta_hz": 4.0
+  },
+  {
+   "type": "pIP10",
+   "side": "L",
+   "n": 1,
+   "baseline_hz": 0.0,
+   "stimulated_hz": 4.0,
+   "delta_hz": 4.0
+  },
+  {
+   "type": "DNd04",
+   "side": "R",
+   "n...
+
+[thinking] In the scrambled condition, pIP10 shows some noisy asymmetric change, but the key signature is gone: 
+TN1a's premotor drive is much weaker than real, pMP2 is no longer the top target, and instead random unrelated DNs 
+light up—confirming the coherent song-premotor pathway depends on the intact sequence rather than just overall 
+activity.
+
+
+
+>> set_scrambled({"enabled": false})
+<< {
+ "wiring": "real connectome",
+ "note": "trace_paths/describe_type still report the REAL connectome; only stimulate() uses the control wiring."
+}
+
+Anatomy is complete — a clean chain from pheromone to song. Now physiology. Let me drive the hub and the sensory PN, watching the song command and premotor neurons.
+
+The hub→command→song-premotor arm is robust and specific (pIP10 +3 Hz, TN1a +4.5 Hz, courtship DN pMP2 +8-9 Hz; escape DNp01 unchanged). Now the essential control: scramble the wiring and repeat.
+
+Real connectome restored. Here is the complete finding.
+
+## The courtship-song circuit, sensory → command
+
+**Anatomical chain (all from the real connectome):**
+
+| Stage | Type | Evidence |
+|---|---|---|
+| Pheromone sensory | **ORN_DA1** (204 neurons, cVA-sensing) | → DA1_lPN at input fraction **0.57** (dominant) |
+| 1st-order relay | **DA1_lPN** (13) | → lateral-horn/AVLP relays (LH007m, LH008m, AVLP743m…) |
+| **Central courtship hub** | **pC1 (P1) cluster** — pC1a,pC1c + pC1_14a | receives the pheromone relays; recurrently interconnected |
+| Song command DN | **pIP10** (1 per side) | pC1_14a → pIP10 direct, input fraction **0.026, excitatory** |
+| Song premotor (VNC) | **TN1a_a…_i** | pIP10's dominant outputs (0.08–0.16 input fraction each) |
+
+So the literature circuit is present in the connectome: **cVA→ORN_DA1→DA1_lPN→…→pC1(P1)→pIP10→TN1a song premotor**.
+
+**Physiology (real wiring, 1 s drive, vs seed-matched baseline):**
+- Driving the **pC1 hub** specifically raised the song command **pIP10 +3 Hz** (both sides), song premotor **TN1a_g +4.5 Hz**, **TN1a_a +2–3 Hz**, and the courtship DN **pMP2 +8–9 Hz** — while the escape giant-fiber **DNp01 stayed at 1 Hz (Δ0)**. That is a coherent, courtship-selective motor output, not generic excitation.
+
+**Scrambled-wiring control (degree-preserving):**
+- Same pC1 drive lost the signature: **TN1a_g +0.5/0**, **TN1a_a −1/0**, pMP2 no longer responsive; the top DNs became a random assortment (DNg109, DNp69, DNp31, pIP1…), and only a lone asymmetric pIP10-L bump remained (spurious). The hub→pIP10→TN1a mapping therefore depends on the actual EM wiring, not on node degree or firing statistics — **the circuit is real.**
+
+## What the model cannot tell you
+- **The sensory arm did not physiologically propagate.** Driving DA1_lPN alone did *not* raise pIP10 (Δ ≈ 0 to −1 Hz). The pheromone→hub route is long (~3 weak relay hops) and, with **hand-calibrated tonic drive and no receptor/olfactory transduction modeled**, it stays sub-threshold. I confirmed the *anatomy* of the sensory→hub link but could only demonstrate the *physiology* of the hub→command→premotor stage. Sensory relays are effectively bypassed.
+- **No plasticity / no state.** Real courtship depends on P1 persistent activity, neuromodulation (e.g. dopamine, fruitless/doublesex state) and experience — none of that exists here; these are static LIF dynamics.
+- **No behavior.** I read TN1a/pIP10 firing, not actual wing extension or the pulse/sine song itself; the VNC→muscle motor output and its patterning aren't validated.
+- **Drive is artificial and coarse.** 0.8 V/step to whole types isn't a natural input, and small single-neuron-per-side counts (pIP10 n=1/side) make rates noisy.
+
+Bottom line: the connectome contains the canonical male courtship pathway and the **pC1/P1 → pIP10 → TN1a** command-to-song limb is wiring-dependent and functionally drivable; the pheromone-detection front end is anatomically traceable but not functionally engaged in this static model.

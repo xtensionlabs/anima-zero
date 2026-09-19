@@ -58,6 +58,7 @@ stimulation, and run the scrambled control before claiming a mechanism.
 | `01_scramble_control` | Same network with permuted targets: lateralization 0.96 -> ~0 while global activity is unchanged. The reflex is in the wiring, not the statistics |
 | `02_pathways` | BrainLab traces LC4/LPLC2 -> DNp01 and LC10a -> DNa02 from anatomy alone; stimulation confirms them; control abolishes them |
 | `03_agent_run.log` | Claude (claude-opus-5), given only the six tools, rediscovered the escape circuit unaided in 22 tool calls: anatomy, left/right mirror, LC4 vs LPLC2 dissection, scrambled control (all deltas 0), then correctly flagged that the giant-fiber-to-jump-motor link is electrical and absent from the model. Hypothesis H4 supported |
+| `04_comparison.md` | Courtship-song circuit, same question to claude-fable-5-1 and claude-opus-4-8. Both found pC1 -> pIP10 -> TN1a with controls. Opus 4.8 followed the textbook pheromone route, whose physiology failed. Fable 5.1 read the connectome, found the hub's real dominant input (ascending leg-contact neuron AN08B074), proved it with a control (+15 Hz real, +0.3 Hz scrambled), and graded the strength of each link |
 
 ## Credits
 

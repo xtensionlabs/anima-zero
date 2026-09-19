@@ -31,7 +31,7 @@ from anima.reservoir import (TASKS, input_map, readout_sets, run_rate, run_spiki
 p = argparse.ArgumentParser()
 p.add_argument("--quick", action="store_true")
 p.add_argument("--mode", choices=["rate", "rate_raw", "spiking", "all"], default="all")
-p.add_argument("--nulls", type=int, default=8)
+p.add_argument("--nulls", type=int, default=6)
 p.add_argument("--alphas", type=float, nargs="*", default=[0.3, 0.6, 0.9, 1.0, 1.1, 1.3, 1.6],
                help="spectral radii for rate mode (conn2res protocol)")
 p.add_argument("--raw-gains", type=float, nargs="*", default=[0.5, 1.0, 2.0, 4.0, 8.0],
@@ -39,8 +39,8 @@ p.add_argument("--raw-gains", type=float, nargs="*", default=[0.5, 1.0, 2.0, 4.0
 p.add_argument("--gains", type=float, nargs="*", default=[1.0, 2.0, 3.0, 4.0, 5.0], help="spiking synaptic gain")
 p.add_argument("--tasks", nargs="*", default=["memory_capacity", "perceptual_decision", "context_decision"])
 p.add_argument("--spiking-tasks", nargs="*", default=["memory_capacity"])
-p.add_argument("--decision-alphas", type=float, nargs="*", default=[0.6, 0.9, 1.1, 1.4])
-p.add_argument("--decision-nulls", type=int, default=5)
+p.add_argument("--decision-alphas", type=float, nargs="*", default=[0.6, 1.0, 1.4])
+p.add_argument("--decision-nulls", type=int, default=4)
 p.add_argument("--out", default=str(ROOT / "results" / "03_reservoir_battery.json"))
 args = p.parse_args()
 
@@ -127,7 +127,10 @@ for mode in [m for m in ("rate", "rate_raw") if args.mode in (m, "all")]:
 if args.mode in ("spiking", "all"):
     orig_idx, orig_w = brain.indices, brain.weights
     for task_name in args.spiking_tasks:
-        task = TASKS[task_name](**TASK_KW[task_name])
+        kw = dict(TASK_KW[task_name])
+        if task_name == "memory_capacity":
+            kw.update(hold=5, k_max=min(kw["k_max"], 20))     # 100 ms input blocks; delays in blocks
+        task = TASKS[task_name](**kw)
         C = task.inputs.shape[1]
         imap = input_map(pool, C, per_channel=600 if C == 1 else 150)
         for name, Wc in networks:

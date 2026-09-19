@@ -88,14 +88,20 @@ class Task:
     meta: dict = field(default_factory=dict)
 
 
-def memory_capacity(steps: int = 1200, k_max: int = 30, washout: int = 100, seed: int = 0) -> Task:
+def memory_capacity(steps: int = 1200, k_max: int = 30, washout: int = 100, seed: int = 0, hold: int = 1) -> Task:
+    """`hold` > 1 keeps each random value for `hold` steps (spiking mode: 20 ms steps are too
+    fast for spike traces to carry per-step memory). Delays k are then counted in held blocks
+    and the readout is taken at the last step of each block."""
     rng = np.random.default_rng(seed)
-    u = rng.uniform(-1, 1, steps).astype(np.float32)
-    t = np.arange(washout + k_max, steps)
-    targets = np.stack([u[t - k] for k in range(1, k_max + 1)], axis=1)
+    n_blocks = steps // hold
+    vals = rng.uniform(-1, 1, n_blocks).astype(np.float32)
+    u = np.repeat(vals, hold)[:steps]
+    b = np.arange(washout // hold + k_max, n_blocks)
+    t = b * hold + hold - 1
+    targets = np.stack([vals[b - k] for k in range(1, k_max + 1)], axis=1)
     train = np.zeros(len(t), bool)
     train[: int(0.7 * len(t))] = True
-    return Task("memory_capacity", u[:, None], t, targets, train, "regression", {"k_max": k_max})
+    return Task("memory_capacity", u[:, None], t, targets, train, "regression", {"k_max": k_max, "hold": hold})
 
 
 def perceptual_decision(n_trials: int = 200, fix: int = 3, stim: int = 12, delay: int = 3, noise: float = 0.6,
@@ -268,7 +274,7 @@ def run_rate(W_csr, alpha: float, rho: float, task: Task, imap, readouts: dict[s
     return out
 
 
-def run_spiking(brain, gain: float, task: Task, imap, readouts: dict[str, np.ndarray], input_scale: float = 0.6,
+def run_spiking(brain, gain: float, task: Task, imap, readouts: dict[str, np.ndarray], input_scale: float = 0.9,
                 tau: float = 0.1, seed: int = 0) -> dict:
     """Same protocol on the leaky integrate-and-fire brain. Inputs in [-1, 1] become injected
     voltage in [0, input_scale]. Features are exponentially filtered spike traces (tau seconds)."""

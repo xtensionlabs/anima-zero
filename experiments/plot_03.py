@@ -31,8 +31,8 @@ REAL, RANDOM, NULL = "#2a78d6", "#eb6834", "#898781"
 ANATOMICAL = ["descending", "mushroom_body_output", "central_complex"]
 TITLES = {"descending": "Descending neurons", "mushroom_body_output": "Mushroom body output (MBON)",
           "central_complex": "Central complex"}
-YLABEL = {"memory_capacity": "memory capacity (sum R²)", "perceptual_decision": "accuracy",
-          "context_decision": "accuracy"}
+YLABEL = {"memory_capacity": "sum of R² over delays", "perceptual_decision": "held-out accuracy",
+          "context_decision": "held-out accuracy"}
 
 # group runs: (mode, task) -> network -> x -> result
 groups: dict = defaultdict(lambda: defaultdict(dict))
@@ -59,7 +59,8 @@ for i, (mode, task) in enumerate(rows):
         if null_names:
             N = np.array([[nets[n][x][ro]["score"] if x in nets[n] else np.nan for x in xs] for n in null_names])
             ax.fill_between(xs, np.nanmin(N, 0), np.nanmax(N, 0), color=NULL, alpha=0.18, linewidth=0)
-            ax.plot(xs, np.nanmean(N, 0), color=NULL, linewidth=2, label=f"nulls, mean of {len(null_names)} ({ro.replace('_', ' ')})")
+            ax.plot(xs, np.nanmean(N, 0), color=NULL, linewidth=2, marker="o", markersize=5,
+                    label=f"nulls, mean of {len(null_names)} ({ro.replace('_', ' ')})")
             for n, row in zip(null_names, N):
                 for x, v in zip(xs, row):
                     csv_rows.append([mode, task, n, x, ro, v])

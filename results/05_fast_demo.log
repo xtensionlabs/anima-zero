@@ -1,403 +1,156 @@
-﻿python : ANTHROPIC_API_KEY is set and takes precedence over the SDK's profile / federation auto-discovery; unset 
-ANTHROPIC_API_KEY to use the auto-discovered credential.
-At line:1 char:601
-+ ...  numbers."; python -m anima.agent --model claude-fable-5-1 --effort m ...
-+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (ANTHROPIC_API_K...red credential.:String) [], RemoteException
-    + FullyQualifiedErrorId : NativeCommandError
- 
+﻿┌──────────────────────────────── anima-zero ─────────────────────────────────┐
+│ How does the fly escape a looming object on its left? Find the circuit,     │
+│ prove it by stimulation with the scrambled control, and tell me what the    │
+│ model cannot show. Be efficient: at most 8 tool calls.                      │
+│ model claude-fable-5-1 · effort medium · brain: MaleCNS v1.0, 166,700       │
+│ neurons, live                                                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+I should keep this efficient with limited tool calls: first check the 
+downstream connections of LC4 and LPLC2 in parallel, then stimulate them on the
+left side while watching DNp01 to trace the pathway.
 
-[thinking] I need to plan this efficiently within 8 tool calls: trace LC4 to DNp01, then stimulate LC4 on the left 
-while watching DNp01 and DNp02, then run a scrambled control comparison. That gives roughly six calls—tracing, 
-stimulating, and toggling the scrambled flag on and off around a repeat stimulation.
+I'll start with anatomy: the two canonical looming-detector populations, LC4   
+and LPLC2, and their downstream descending neurons.                            
 
+ 1. describe_type(cell_type="LC4", top=8)
 
+ 2. describe_type(cell_type="LPLC2", top=8)
+  LC4: 126 neurons (L:71/R:55), excitatory, visual_projection
+    -> strongest targets (share of their input): PVLP024 63%+, DNp04 55%+, 
+CB3400 30%+, CB2591,CB2917 28%+, DNp02 26%+
+    <- strongest inputs (share of its input):    T2 15%+, TmY3 13%+, Tm4 10%+, 
+Tm2 7%+, LC4 6%+
+  LPLC2: 185 neurons (L:94/R:91), excitatory, visual_projection
+    -> strongest targets (share of their input): PVLP069 78%+, PVLP111 73%+, 
+PVLP112a 35%+, AVLP531 26%+, PVLP130 22%+
+    <- strongest inputs (share of its input):    LPLC2 13%+, Tm5f 8%+, T5b 5%+,
+T5d 5%+, T5c 5%+
+LC4 drives DNp04 (55%) and DNp02 (26%), while LPLC2 also hits DNp04 (16%). I'll
+now check the route to giant fiber DNp01, the classic LPLC2/LC4 target, 
+alongside the physiology check.
 
->> trace_paths({"source_type": "LC4", "target_type": "DNp01", "max_hops": 2})
+ 3. trace_paths(source_type="LPLC2", target_type="DNp01", max_hops=2, top=3)
 
->> describe_type({"cell_type": "LC4", "top": 6})
-<< {
- "from": "LC4",
- "to": "DNp01",
- "direct_input_fraction": 0.1718,
- "direct_sign": "+",
- "paths": [
-  {
-   "hops": 1,
-   "score": 0.171801,
-   "route": "LC4 -> DNp01",
-   "steps": [
-    {
-     "from": "LC4",
-     "to": "DNp01",
-     "input_fraction": 0.1718,
-     "sign": "+"
-    }
-   ]
-  },
-  {
-   "hops": 2,
-   "score": 0.005215,
-   "route": "LC4 -> SAD064 -> DNp01",
-   "steps": [
-    {
-     "from": "LC4",
-     "to": "SAD064",
-     "input_fraction": 0.1571,
-     "sign": "+"
-    },
-    {
-     "from": "SAD064",
-     "to": "DNp01",
-     "input_fraction": 0.0332,
-     "sign": "+"
-    }
-   ]
-  },
-  {
-   "hops": 2,
-   "score": 0.003795,
-   "route": "LC4 -> PVLP122b -> DNp01",
-   "steps": [
-    {
-     "from": "LC4",
-     "to": "PVLP122b",
-     "input_fraction": 0.1302,
-     "sign": "+"
-    },
-    {
-     "from": "PVLP122b",
-     "to": "DNp01",
-     "input_fraction": 0.0291,
-     "sign": "+"
-    }
-   ]
-  }
- ],
- "searched_hops": 2,
- "note": "score = product of input fractions along the route; higher = stronger. Beam search, top 20 partners per 
-hop, so weak routes can be missed."
-}
-<< {
- "type": "LC4",
- "neurons": 126,
- "sides": {
-  "L": 71,
-  "R": 55
- },
- "superclass": [
-  "visual_projection"
- ],
- "sign": "excitatory",
- "inhibitory_fraction_of_output": 0.0,
- "total_input_fraction_accounted_by_named_types": 1.0,
- "strongest_downstream": [
-  {
-   "type": "PVLP024",
-   "neurons": 3,
-   "input_fraction": 0.6332,
-   "net_sign": "+",
-   "superclass": [
-    "cb_intrinsic"
-   ]
-  },
-  {
-   "type": "DNp04",
-   "neurons": 2,
-   "input_fraction": 0.5493,
-   "net_sign": "+",
-   "superclass": [
-    "descending_neuron"
-   ]
-  },
-  {
-   "type": "CB3400",
-   "neurons": 2,
-   "input_fraction": 0.3004,
-   "net_sign": "+",
-   "superclass": [
-    "cb_intrinsic"
-   ]
-  },
-  {
-   "type": "CB2591,CB2917",
-   "neurons": 5,
-   "input_fraction": 0.2829,
-   "net_sign": "+",
-   "superclass": [
-    "cb_intrinsic"
-   ]
-  },
-  {
-   "type": "DNp02",
-   "neurons": 2,
-   "input_fraction": 0.2622,
-   "net_sign": "+",
-   "superclass": [
-    "descending_neuron"
-   ]
-  },
-  {
-   "type": "PVLP021",
-   "neurons": 4,
-   "input_fraction": 0.2497,
-   "net_sign": "+",
-   "superclass": [
-    "cb_intrinsic"
-   ]
-  }
- ],
- "strongest_upstream": [
-  {
-   "type": "T2",
-   "neurons": 1630,
-   "input_fraction": 0.1505,
-   "net_sign": "+",
-   "superclass": [
-    "ol_intrinsic"
-   ]
-  },
-  {
-   "type": "TmY3",
-   "neurons": 824,
-   "input_fraction": 0.1339,
-   "net_sign": "+",
-   "superclass": [
-    "ol_intrinsic"
-   ]
-  },
-  {
-   "type": "Tm4",
-   "neurons": 1670,
-   "input_fraction": 0.1005,
-   "net_sign":...
+ 4. stimulate(types=["LC4", "LPLC2"], side="L", watch=["DNp01", "DNp02", 
+"DNp04", "DNp11", "DNp06"])
+  LPLC2 -> DNp01: direct synapses supply 13.3% of DNp01's input (+)
+    LPLC2 -> DNp01   strength 0.1330
+    LPLC2 -> PVLP151 -> DNp01   strength 0.0030
+REAL CONNECTOME   drive LC4, LPLC2 side=L (165 neurons, 1.0 s)     
+neuron                │ side │ baseline Hz │ stimulated Hz │ change
+──────────────────────┼──────┼─────────────┼───────────────┼───────
+DNp01                 │ L    │           1 │            48 │    +47
+DNp01                 │ R    │           1 │             2 │     +1
+DNp02                 │ L    │           1 │            47 │    +46
+DNp02                 │ R    │           0 │             1 │     +1
+DNp04                 │ L    │           1 │            49 │    +48
+DNp04                 │ R    │           1 │             0 │     -1
+DNp11                 │ L    │           0 │            25 │    +25
+DNp11                 │ R    │           0 │             0 │     +0
+DNp06                 │ L    │           0 │            16 │    +16
+DNp06                 │ R    │           0 │             3 │     +3
+──────────────────────┼──────┼─────────────┼───────────────┼───────
+DNg40  (most changed) │ L    │           0 │            25 │    +25
+DNp03  (most changed) │ L    │           2 │            25 │    +23
+  whole brain: 674 of 166,700 neurons changed by >5 Hz; mean rate 1.91 -> 2.09 
+Hz
 
->> stimulate({"types": ["LC4"], "side": "L", "watch": ["DNp01", "DNp02", "DNp04"]})
-<< {
- "stimulated": {
-  "types": [
-   "LC4"
-  ],
-  "side": "L",
-  "neurons": 71,
-  "amount": 0.8,
-  "duration_s": 1.0
- },
- "wiring": "real connectome",
- "watched": {
-  "DNp01": {
-   "L": {
-    "n": 1,
-    "baseline_hz": 1.0,
-    "stimulated_hz": 25.0,
-    "delta_hz": 24.0
-   },
-   "R": {
-    "n": 1,
-    "baseline_hz": 1.0,
-    "stimulated_hz": 1.0,
-    "delta_hz": 0.0
-   }
-  },
-  "DNp02": {
-   "L": {
-    "n": 1,
-    "baseline_hz": 1.0,
-    "stimulated_hz": 48.0,
-    "delta_hz": 47.0
-   },
-   "R": {
-    "n": 1,
-    "baseline_hz": 0.0,
-    "stimulated_hz": 0.0,
-    "delta_hz": 0.0
-   }
-  },
-  "DNp04": {
-   "L": {
-    "n": 1,
-    "baseline_hz": 1.0,
-    "stimulated_hz": 49.0,
-    "delta_hz": 48.0
-   },
-   "R": {
-    "n": 1,
-    "baseline_hz": 1.0,
-    "stimulated_hz": 0.0,
-    "delta_hz": -1.0
-   }
-  }
- },
- "most_changed_descending_neurons": [
-  {
-   "type": "DNp04",
-   "side": "L",
-   "n": 1,
-   "baseline_hz": 1.0,
-   "stimulated_hz": 49.0,
-   "delta_hz": 48.0
-  },
-  {
-   "type": "DNp02",
-   "side": "L",
-   "n": 1,
-   "baseline_hz": 1.0,
-   "stimulated_hz": 48.0,
-   "delta_hz": 47.0
-  },
-  {
-   "type": "DNp11",
-   "side": "L",
-   "n": 1,
-   "baseline_hz": 0.0,
-   "stimulated_hz": 25.0,
-   "delta_hz": 25.0
-  },
-  {
-   "type": "DNp01",
-   "side": "L",
-   "n": 1,
-   "baseline_hz": 1.0,
-   "stimulated_hz": 25.0,
-   "delta_hz": 24.0
-  },
-  {
-   "type": "DNp03",
-   "side": "L",
-   "n": 1,
-   "baseline_hz": 2.0,
-   "stimulated_hz": 25.0,
-   "delta_hz": 23.0
-  },
-  {
-   "type": "DNp05",
- ...
+Strong, strictly ipsilateral escape output. Now the scrambled-wiring control.  
 
->> set_scrambled({"enabled": true})
-<< {
- "wiring": "scrambled (control)",
- "note": "trace_paths/describe_type still report the REAL connectome; only stimulate() uses the control wiring."
-}
+ 5. set_scrambled(enabled=true)
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CONTROL: wiring scrambled. Same neurons, same degrees, same signs.          │
+│ Who-connects-to-whom is random.                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
 
->> stimulate({"types": ["LC4"], "side": "L", "watch": ["DNp01", "DNp02", "DNp04"]})
-<< {
- "stimulated": {
-  "types": [
-   "LC4"
-  ],
-  "side": "L",
-  "neurons": 71,
-  "amount": 0.8,
-  "duration_s": 1.0
- },
- "wiring": "scrambled (control)",
- "watched": {
-  "DNp01": {
-   "L": {
-    "n": 1,
-    "baseline_hz": 3.0,
-    "stimulated_hz": 2.0,
-    "delta_hz": -1.0
-   },
-   "R": {
-    "n": 1,
-    "baseline_hz": 2.0,
-    "stimulated_hz": 3.0,
-    "delta_hz": 1.0
-   }
-  },
-  "DNp02": {
-   "L": {
-    "n": 1,
-    "baseline_hz": 1.0,
-    "stimulated_hz": 1.0,
-    "delta_hz": 0.0
-   },
-   "R": {
-    "n": 1,
-    "baseline_hz": 2.0,
-    "stimulated_hz": 3.0,
-    "delta_hz": 1.0
-   }
-  },
-  "DNp04": {
-   "L": {
-    "n": 1,
-    "baseline_hz": 2.0,
-    "stimulated_hz": 2.0,
-    "delta_hz": 0.0
-   },
-   "R": {
-    "n": 1,
-    "baseline_hz": 2.0,
-    "stimulated_hz": 2.0,
-    "delta_hz": 0.0
-   }
-  }
- },
- "most_changed_descending_neurons": [
-  {
-   "type": "DNa02",
-   "side": "L",
-   "n": 1,
-   "baseline_hz": 5.0,
-   "stimulated_hz": 2.0,
-   "delta_hz": -3.0
-  },
-  {
-   "type": "DNg111",
-   "side": "R",
-   "n": 1,
-   "baseline_hz": 3.0,
-   "stimulated_hz": 6.0,
-   "delta_hz": 3.0
-  },
-  {
-   "type": "DNg37",
-   "side": "L",
-   "n": 1,
-   "baseline_hz": 0.0,
-   "stimulated_hz": 3.0,
-   "delta_hz": 3.0
-  },
-  {
-   "type": "DNge055",
-   "side": "R",
-   "n": 1,
-   "baseline_hz": 0.0,
-   "stimulated_hz": 3.0,
-   "delta_hz": 3.0
-  },
-  {
-   "type": "DNge080",
-   "side": "R",
-   "n": 1,
-   "baseline_hz": 1.0,
-   "stimulated_hz": 4.0,
-   "delta_hz": 3.0
-  },
-  {
-   "type": "DNp60",
-   "sid...
+ 6. stimulate(types=["LC4", "LPLC2"], side="L", watch=["DNp01", "DNp02", 
+"DNp04", "DNp11", "DNp06"])
+SCRAMBLED (CONTROL)   drive LC4, LPLC2 side=L (165 neurons, 1.0 s) 
+neuron                │ side │ baseline Hz │ stimulated Hz │ change
+──────────────────────┼──────┼─────────────┼───────────────┼───────
+DNp01                 │ L    │           3 │             3 │     +0
+DNp01                 │ R    │           2 │             2 │     +0
+DNp02                 │ L    │           1 │             1 │     +0
+DNp02                 │ R    │           2 │             3 │     +1
+DNp04                 │ L    │           2 │             2 │     +0
+DNp04                 │ R    │           2 │             2 │     +0
+DNp11                 │ L    │           4 │             4 │     +0
+DNp11                 │ R    │           2 │             5 │     +3
+DNp06                 │ L    │           1 │             3 │     +2
+DNp06                 │ R    │           3 │             3 │     +0
+──────────────────────┼──────┼─────────────┼───────────────┼───────
+DNc01  (most changed) │ L    │           1 │             4 │     +3
+DNg40  (most changed) │ L    │           3 │             0 │     -3
+DNa02  (most changed) │ L    │           5 │             3 │     -2
+DNa04  (most changed) │ R    │           3 │             1 │     -2
+DNa09  (most changed) │ R    │           3 │             5 │     +2
+  whole brain: 166 of 166,700 neurons changed by >5 Hz; mean rate 0.77 -> 0.85 
+Hz
 
->> set_scrambled({"enabled": false})
-<< {
- "wiring": "real connectome",
- "note": "trace_paths/describe_type still report the REAL connectome; only stimulate() uses the control wiring."
-}
+ 7. set_scrambled(enabled=false)
+┌───────────────────────────┐
+│ Real connectome restored. │
+└───────────────────────────┘
 
-I'll start with anatomy: the LC4→DNp01 routes and LC4's own connectivity profile.
+The left-looming escape circuit (6 tool calls)                                 
 
-Anatomy predicts a direct monosynaptic excitatory LC4→DNp01 route (17% of DNp01's input), plus strong LC4 drive to DNp02 (26%) and DNp04 (55%). Now physiology: drive left LC4.
+Anatomy (real connectome)                                                      
 
-Clean ipsilateral escape signature. Now the scrambled-wiring control.
+ • LC4 (126 neurons, 71 L / 55 R) and LPLC2 (185, 94 L / 91 R) are the         
+   looming-sensitive visual projection neurons, both purely excitatory, fed by 
+   optic-lobe T2/TmY3/Tm4 (LC4) and T4/T5/Tm5f motion pathways (LPLC2).        
+ • They synapse directly onto the escape descending neurons in the ipsilateral 
+   hemisphere:                                                                 
+    • LC4 → DNp04 (55% of DNp04's total input), → DNp02 (26%)                  
+    • LPLC2 → DNp01 giant fiber (13% direct; the best indirect route via       
+      PVLP151 is 40× weaker, score 0.003), → DNp04 (16%)                       
+ • Both also feed a cloud of PVLP/AVLP interneurons (PVLP024 63%, PVLP111 73%, 
+   PVLP069 78%) that presumably distribute the signal to the wider takeoff     
+   program.                                                                    
 
-**Mechanism: left loom → left LC4 → ipsilateral escape DNs, mostly monosynaptic.**
+Physiology (drive left LC4+LPLC2, 165 neurons, 0.8/step, 1 s)                  
 
-*Anatomy (real connectome):* LC4 (126 neurons; 71 L / 55 R; excitatory) synapses directly onto the giant fiber DNp01, supplying 17.2% of its input. Indirect routes (LC4→SAD064→DNp01, LC4→PVLP122b→DNp01) are ~30× weaker (scores 0.005, 0.004). LC4 also feeds DNp02 (26.2% of its input) and DNp04 (54.9%).
+                                                                    
+ DN (left)                             baseline  stimulated  Δ      
+ ────────────────────────────────────────────────────────────────── 
+ DNp04                                 1 Hz      49 Hz       +48    
+ DNp01 (giant fiber)                   1         48          +47    
+ DNp02                                 1         47          +46    
+ DNp11 / DNg40 / DNp03                 0–2       25          +23–25 
+ DNp71, DNp05, DNpe056, DNp06, DNp103  0–2       16–20       +15–19 
+                                                                    
 
-*Physiology:* Driving the 71 left LC4 for 1 s (0.8/step) raised **left** DNp01 1→25 Hz (+24), **left** DNp02 1→48 Hz (+47), **left** DNp04 1→49 Hz (+48), plus DNp11 (+25), DNp03 (+23), DNp05 (+16). Right-side DNp01/02/04 were unchanged (0 to −1 Hz). Escape is thus lateralized: the looming-side LC4 population recruits the same-side takeoff command neurons.
+The right-side homologs were essentially silent (DNp01 R +1, DNp02 R +1, DNp04 
+R −1, DNp11 R 0). So a looming object on the left recruits the entire left     
+escape DN ensemble — giant fiber (fast jump/wing-depressor takeoff),           
+DNp02/DNp04/DNp11 (directional takeoff/leg-based pre-takeoff postural          
+adjustment), DNp03/DNp06/DNp05 — with almost no crossover. Behaviorally this is
+consistent with the fly's directional escape: ipsilateral DN activation biases 
+the leg-push to jump away from the left stimulus. 674 neurons brain-wide       
+changed >5 Hz.                                                                 
 
-*Control:* With degree-preserving scrambled wiring, the identical stimulus produced no change in DNp01/02/04 (|Δ| ≤ 1 Hz); the largest DN change anywhere was −3 Hz. The effect depends on specific LC4→DN wiring, not on LC4's synapse count.
+Scrambled control (degree-preserving) Same stimulus, same seed: DNp01 L Δ 0,   
+DNp02 L Δ 0, DNp04 L Δ 0, DNp11 L Δ 0, DNp06 L Δ +2. Largest DN change anywhere
+was ±3 Hz (noise), and only 166 neurons changed >5 Hz. The 45–48 Hz responses  
+therefore depend on the specific LC4/LPLC2 → DNp wiring, not on these          
+populations' size or synapse counts. Wiring restored to real connectome        
+afterward.                                                                     
 
-*Caveats:* the drive is hand-set (not a real loom stimulus through photoreceptors/T2/TmY3), no plasticity or neuromodulation, one seed, and the model cannot predict actual takeoff kinematics — only which descending commands fire.
+What the model cannot show                                                     
+
+ • No real looming stimulus: I injected current into LC4/LPLC2 directly,       
+   bypassing the retina, lamina, and T4/T5/Tm computations that make these     
+   cells selective for expansion vs. other motion. The model says "if LC4/LPLC2
+   fire, DNp01/02/04 fire," not that a looming disc would fire them.           
+ • Drive is hand-calibrated (0.8/step drives most cells near threshold); the   
+   saturating ~48 Hz values reflect the drive and the 20 ms step, not measured 
+   escape latencies or the graded, timing-dependent LC4-vs-LPLC2 weighting that
+   selects short-mode vs. long-mode takeoffs in vivo.                          
+ • No plasticity, neuromodulation, or state (e.g., flight vs. standing,        
+   habituation), and no ventral-nerve-cord/muscle readout: I can show which DNs
+   fire, not the jump itself or its direction.                                 
+ • Signs come from predicted neurotransmitters; type-level analysis hides      
+   single-neuron heterogeneity (e.g., the retinotopic gradient of LC4 →        
+   DNp02/DNp11 synapses that encodes stimulus azimuth).                        
+
+7 tool calls

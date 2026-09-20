@@ -103,7 +103,82 @@ def build_tools(lab: BrainLab):
     return [overview, search_types, describe_type, trace_paths, stimulate, set_scrambled]
 
 
+# ---- human-readable rendering of tool results (what a judge sees) -------------------------------
+
+from rich.console import Console  # noqa: E402
+from rich.markdown import Markdown  # noqa: E402
+from rich.panel import Panel  # noqa: E402
+from rich.table import Table  # noqa: E402
+
+console = Console(highlight=False)
+
+
+def render_result(name: str, data) -> None:
+    if not isinstance(data, dict):
+        console.print(f"  [dim]{str(data)[:300]}[/]")
+        return
+    if "error" in data:
+        console.print(f"  [red]{data['error']}[/]  did you mean: {', '.join(data.get('did_you_mean', [])[:6])}")
+        return
+    if name == "overview":
+        console.print(f"  {data['neurons']:,} neurons, {data['connections']:,} connections, {data['cell_types']:,} cell types, "
+                      f"{data['descending_neuron_types']} descending-neuron types (motor commands)")
+    elif name == "search_types":
+        hits = ", ".join(f"{t['type']} ({t['neurons']})" for t in data["types"][:10])
+        console.print(f"  {data['matches']} types match '{data['query']}': {hits}")
+    elif name == "describe_type":
+        down = ", ".join(f"{d['type']} {100*d['input_fraction']:.0f}%{d['net_sign']}" for d in data["strongest_downstream"][:5])
+        up = ", ".join(f"{d['type']} {100*d['input_fraction']:.0f}%{d['net_sign']}" for d in data["strongest_upstream"][:5])
+        sides = "/".join(f"{k}:{v}" for k, v in data["sides"].items())
+        console.print(f"  [bold]{data['type']}[/]: {data['neurons']} neurons ({sides}), {data['sign']}, {'/'.join(data['superclass'])}")
+        console.print(f"    -> strongest targets (share of their input): {down}")
+        console.print(f"    <- strongest inputs (share of its input):    {up}")
+    elif name == "trace_paths":
+        d = data["direct_input_fraction"]
+        console.print(f"  [bold]{data['from']} -> {data['to']}[/]: direct synapses supply {100*d:.1f}% of {data['to']}'s input ({data['direct_sign']})"
+                      if d > 0 else f"  [bold]{data['from']} -> {data['to']}[/]: no direct synapses")
+        for p in data["paths"][:4]:
+            console.print(f"    {p['route']}   strength {p['score']:.4f}")
+        if not data["paths"]:
+            console.print("    no route found within the search budget")
+    elif name == "stimulate":
+        s = data["stimulated"]
+        scr = data["wiring"].startswith("scrambled")
+        colour = "red" if scr else "green"
+        title = (f"[{colour}]{data['wiring'].upper()}[/]   drive {', '.join(s['types'])} side={s['side'] or 'both'} "
+                 f"({s['neurons']} neurons, {s['duration_s']} s)")
+        t = Table(title=title, title_justify="left", show_edge=False, pad_edge=False, header_style="bold")
+        for col in ("neuron", "side", "baseline Hz", "stimulated Hz", "change"):
+            t.add_column(col, justify="right" if "Hz" in col or col == "change" else "left")
+
+        def row(name, side, v):
+            dlt = v["delta_hz"]
+            style = "bold green" if dlt >= 5 else ("bold red" if dlt <= -5 else "dim")
+            t.add_row(name, side, f"{v['baseline_hz']:.0f}", f"{v['stimulated_hz']:.0f}", f"[{style}]{dlt:+.0f}[/]")
+
+        for name_, sides in data["watched"].items():
+            for side, v in sides.items():
+                row(name_, side, v)
+        if data["watched"] and data["most_changed_descending_neurons"]:
+            t.add_section()
+        for c in data["most_changed_descending_neurons"][:6]:
+            if c["type"] not in data["watched"]:
+                row(f"{c['type']}  (most changed)", c["side"], c)
+        console.print(t)
+        wb = data["whole_brain"]
+        console.print(f"  whole brain: {wb['neurons_with_delta_over_5hz']:,} of 166,700 neurons changed by >5 Hz; "
+                      f"mean rate {wb['baseline_mean_hz']:.2f} -> {wb['stimulated_mean_hz']:.2f} Hz")
+    elif name == "set_scrambled":
+        scr = data["wiring"].startswith("scrambled")
+        console.print(Panel(f"[bold]{'CONTROL: wiring scrambled. Same neurons, same degrees, same signs. Who-connects-to-whom is random.' if scr else 'Real connectome restored.'}[/]",
+                            style="red" if scr else "green", expand=False))
+    else:
+        console.print(f"  [dim]{json.dumps(data)[:400]}[/]")
+
+
 def run(question: str, model: str = MODEL, effort: str = "high", lab: BrainLab | None = None) -> str:
+    console.print(Panel(f"[bold]{question}[/]\n[dim]model {model} · effort {effort} · brain: MaleCNS v1.0, 166,700 neurons, live[/]",
+                        title="anima-zero", expand=False))
     lab = lab or BrainLab()
     client = anthropic.Anthropic()
     runner = client.beta.messages.tool_runner(
@@ -116,30 +191,41 @@ def run(question: str, model: str = MODEL, effort: str = "high", lab: BrainLab |
         messages=[{"role": "user", "content": question}],
     )
     final_text = ""
+    calls = 0
     for message in runner:
+        pending = []
         for block in message.content:
             if block.type == "thinking" and block.thinking:
-                print(f"\n[thinking] {block.thinking[:600]}", file=sys.stderr)
+                console.print(f"[dim italic]{block.thinking[:400].strip()}[/]")
             elif block.type == "tool_use":
-                print(f"\n>> {block.name}({json.dumps(block.input)})", file=sys.stderr)
-            elif block.type == "text":
+                calls += 1
+                args = ", ".join(f"{k}={json.dumps(v)}" for k, v in block.input.items())
+                console.print(f"\n[bold cyan]{calls:>2}. {block.name}[/]([dim]{args}[/])")
+                pending.append(block.name)
+            elif block.type == "text" and block.text.strip():
                 final_text = block.text
-                print(f"\n{block.text}")
+                console.print()
+                console.print(Markdown(block.text))
         if message.stop_reason == "refusal":
-            print("model refused; see stop_details", file=sys.stderr)
+            console.print("[red]model refused; see stop_details[/]")
             break
         tool_response = runner.generate_tool_call_response()
         if tool_response is not None:
-            for r in tool_response["content"]:
-                content = r["content"] if isinstance(r["content"], str) else json.dumps(r["content"])
-                print(f"<< {content[:1500]}{'...' if len(content) > 1500 else ''}", file=sys.stderr)
+            for name, r in zip(pending, tool_response["content"]):
+                raw = r["content"] if isinstance(r["content"], str) else json.dumps(r["content"])
+                try:
+                    render_result(name, json.loads(raw))
+                except json.JSONDecodeError:
+                    console.print(f"  [dim]{raw[:300]}[/]")
+    console.print(f"\n[dim]{calls} tool calls[/]")
     return final_text
 
 
 def main() -> None:
     p = argparse.ArgumentParser(description="Ask Claude to investigate the fly connectome by experiment.")
-    p.add_argument("question", nargs="?", default="How does the fly turn a looming object on its left into an escape? "
-                                                  "Find the circuit, test it by stimulation, and run the scrambled control.")
+    p.add_argument("question", nargs="?", default="How does the fly escape a looming object on its left? Find the circuit, "
+                                                  "prove it by stimulation with the scrambled control, and tell me what the "
+                                                  "model cannot show. Be efficient: at most 8 tool calls.")
     p.add_argument("--model", default=MODEL)
     p.add_argument("--effort", default="high", choices=["low", "medium", "high", "xhigh", "max"])
     a = p.parse_args()
